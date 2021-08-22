@@ -6,10 +6,12 @@ services:
     container_name: filebrowser
     restart: unless-stopped
     command: >
-      --config=/config/filebrowser.json --database=/config/database.db --address=0.0.0.0 --port=8080
+      --config=/config/filebrowser.json --database=/config/database.db --address=0.0.0.0 --port=8080 --log=/config/log/filebrowser.log
     healthcheck:
       test: curl -f http://localhost:8080/health || exit 1
     volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
       - ./config:/config
       - ./data:/data
     expose:
