@@ -1,0 +1,22 @@
+---
+version: "3"
+services:
+  grocy:
+    image: docker.io/linuxserver/grocy:latest
+    container_name: grocy
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - ./config:/config
+    expose:
+      - 80
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.9.0/27
