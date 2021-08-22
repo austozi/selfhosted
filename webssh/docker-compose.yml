@@ -1,0 +1,16 @@
+---
+version: "3"
+services:
+  webssh:
+    image: docker.io/austozi/webssh:latest
+    container_name: webssh
+    restart: unless-stopped
+    expose:
+    - 8888
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.30.0/27
