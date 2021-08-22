@@ -1,0 +1,21 @@
+---
+version: "3"
+services:
+  filebrowser:
+    image: docker.io/filebrowser/filebrowser:latest
+    container_name: filebrowser
+    restart: unless-stopped
+    command: >
+      --database=/config/database.db --address=0.0.0.0 --port=8080
+    volumes:
+      - ./config:/config
+      - ./data:/data
+    expose:
+      - 8080
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.29.0/27
