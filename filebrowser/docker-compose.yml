@@ -2,11 +2,13 @@
 version: "3"
 services:
   filebrowser:
-    image: docker.io/filebrowser/filebrowser:latest
+    image: filebrowser/filebrowser:latest
     container_name: filebrowser
     restart: unless-stopped
     command: >
-      --database=/config/database.db --address=0.0.0.0 --port=8080
+      --config=/config/filebrowser.json --database=/config/database.db --address=0.0.0.0 --port=8080
+    healthcheck:
+      test: curl -f http://localhost:8080/health || exit 1
     volumes:
       - ./config:/config
       - ./data:/data
