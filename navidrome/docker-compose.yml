@@ -1,0 +1,25 @@
+---
+version: "3"
+services:
+  navidrome:
+    image: docker.io/deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    user: 1000:1000
+    environment:
+      # Full configuration options here:
+      # https://www.navidrome.org/docs/usage/configuration-options/
+      - ND_IMAGECACHESIZE=1GB
+      - ND_UILOGINBACKGROUNDURL=https://wallpapercave.com/wp/KP5DWwa.jpg
+    volumes:
+      - ./config:/data
+      - ./music:/music:ro
+    expose:
+      - 4533
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.4.0/27
