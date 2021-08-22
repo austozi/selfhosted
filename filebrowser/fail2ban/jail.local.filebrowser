@@ -1,0 +1,6 @@
+# Append the following to swag/config/fail2ban/jail.local
+[filebrowser]
+enabled = true
+port = http,https,8080
+filter = filebrowser
+logpath = /config/log/filebrowser/filebrowser.log
