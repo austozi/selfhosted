@@ -1,0 +1,25 @@
+---
+version: "3"
+services:
+  ulogger:
+    image: docker.io/austozi/ulogger-server:latest
+    container_name: ulogger
+    restart: unless-stopped
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/London
+      - ULOGGER_LANG=en_GB.utf-8
+      - ULOGGER_ADMIN_USER=admin
+      - ULOGGER_DB_DRIVER=sqlite
+    volumes:
+      - ./data:/data
+    expose:
+      - 80
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.16.28.0/27
