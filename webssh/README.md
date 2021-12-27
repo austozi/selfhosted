@@ -1,6 +1,6 @@
 # WebSSH
 
-[WebSSH](https://github.com/huashengdun/webssh) is a web-based SSH client. These files are used to dockerise the application and serve it behind an NGINX reverse proxy, provided by the [SWAG container](https://github.com/linuxserver/docker-swag).
+[WebSSH](https://github.com/huashengdun/webssh) is a web-based SSH client. These files are used to dockerise the application and serve it behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag).
 
 ## Build
 
