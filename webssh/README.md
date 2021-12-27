@@ -6,16 +6,8 @@
 
 The latest build of this image is available on [Docker Hub](https://hub.docker.com/r/austozi/webssh) for the armhf architecture. 
 
-To build the image, execute:
-
-```
-docker build -t austozi/webssh:latest .
-```
+Execute `docker build -t austozi/webssh:latest .` (note: the trailing period is important).
 
 ## Install
 
-To install the application in Docker, execute:
-
-```
-docker-compose up -d
-```
+Run `docker-compose up -d`.
