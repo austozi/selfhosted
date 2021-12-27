@@ -8,4 +8,4 @@ Execute `docker-compose up -d`.
 
 This will install the [Nextcloud server](https://hub.docker.com/r/linuxserver/nextcloud), a dedicated [MariaDB database server](https://hub.docker.com/r/yobasystems/alpine-mariadb) and [Redis](https://hub.docker.com/_/redis), using off-the-shelf images from [Docker Hub](https://hub.docker.com). The Nextcloud server itself is intended to be run behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag). 
 
-It also joins the Docker network for the mail server, because Nextcloud uses e-mail notifications.
+It also joins the Docker network for the mail server, to allow Nextcloud to use it for e-mail notifications.
