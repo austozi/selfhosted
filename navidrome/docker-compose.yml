@@ -1,25 +1,21 @@
----
 version: "3"
 services:
   navidrome:
-    image: docker.io/deluan/navidrome:latest
+    image: deluan/navidrome:latest
     container_name: navidrome
     restart: unless-stopped
-    user: 1000:1000
+    user: "1000:1000"
     environment:
       # Full configuration options here:
       # https://www.navidrome.org/docs/usage/configuration-options/
-      - ND_IMAGECACHESIZE=1GB
-      - ND_UILOGINBACKGROUNDURL=https://wallpapercave.com/wp/KP5DWwa.jpg
+      ND_UILOGINBACKGROUNDURL: https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg
     volumes:
       - ./config:/data
       - ./music:/music:ro
     expose:
       - 4533
+    networks:
+      - swag_default
 networks:
-  default:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.16.4.0/27
+  swag_default:
+    external: true
