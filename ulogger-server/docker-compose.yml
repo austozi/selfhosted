@@ -4,14 +4,13 @@ services:
     image: austozi/ulogger-server:latest
     container_name: ulogger
     restart: unless-stopped
+    command: sh -c '/init.sh && chown -R nobody:nobody /data && /run.sh'
     environment:
-      - UID=1000
-      - GID=1000
       - TZ=Europe/London
-      - ULOGGER_LANG=en_GB.utf-8
-      # Specify admin user name here (default = admin)
-      #- ULOGGER_ADMIN_USER=
+      - ULOGGER_ADMIN_USER=admin
+      - ULOGGER_ENABLE_SETUP=0
       - ULOGGER_DB_DRIVER=sqlite
+      - ULOGGER_LANG=en_GB.utf-8
     volumes:
       - ./config:/data
     expose:
