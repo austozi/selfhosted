@@ -6,7 +6,7 @@
 
 Make the build.sh script executable `chmod +x build.sh`, then execute it. 
 
-The script will download the specified release of the source code from upstream, tweak the Dockerfile to disable Docker volume creation in the image, and then build the image for use with an SQLite database. The script will delete the source files after the build, and push the image to Docker Hub.
+The script will download the specified release of the source code from upstream, tweak the Dockerfile to disable Docker volume creation in the image, and then build the image for use with an SQLite database. The script will delete the source files after the build, and push the image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
 
 ## Install
 
