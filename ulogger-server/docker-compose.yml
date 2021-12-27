@@ -1,8 +1,7 @@
----
 version: "3"
 services:
   ulogger:
-    image: docker.io/austozi/ulogger-server:latest
+    image: austozi/ulogger-server:latest
     container_name: ulogger
     restart: unless-stopped
     environment:
@@ -10,16 +9,15 @@ services:
       - GID=1000
       - TZ=Europe/London
       - ULOGGER_LANG=en_GB.utf-8
-      - ULOGGER_ADMIN_USER=admin
+      # Specify admin user name here (default = admin)
+      #- ULOGGER_ADMIN_USER=
       - ULOGGER_DB_DRIVER=sqlite
     volumes:
-      - ./data:/data
+      - ./config:/data
     expose:
       - 80
+    networks:
+      - swag_default
 networks:
-  default:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.16.28.0/27
+  swag_default:
+    external: true
