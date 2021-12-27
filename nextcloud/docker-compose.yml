@@ -1,8 +1,8 @@
----
 version: "3"
 services:
   nextcloud:
-    image: docker.io/linuxserver/nextcloud:latest
+    # Change tag manually to upgrade
+    image: linuxserver/nextcloud:22.2.2
     container_name: nextcloud
     restart: unless-stopped
     environment:
@@ -11,7 +11,7 @@ services:
       - TZ=Europe/London
       - DB_HOST=nextcloud_db
       - DB_USERNAME=nextcloud
-      - DB_PASSWORD=change_me
+      - DB_PASSWORD=Super-Secret-Password1
       - DB_DATABASE=nextcloud
     volumes:
       - ./config:/config
@@ -21,26 +21,30 @@ services:
     depends_on:
       - db
       - redis
+    networks:
+      - default
+      - swag_default
+      - mailserver_default
   db:
-    image: docker.io/yobasystems/alpine-mariadb:10.5.9
+    # Change tag manually to upgrade
+    image: yobasystems/alpine-mariadb:10.5.9
     container_name: nextcloud_db
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=change_me
       - TZ=Europe/London
+      - MYSQL_ROOT_PASSWORD=Super-Secret-Password2
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=change_me
+      - MYSQL_PASSWORD=Super-Secret-Password1
       - MYSQL_CHARSET=utf8mb4
       - MYSQL_COLLATION=utf8mb4_general_ci
-    volumes:
-      - ./mariadb:/var/lib/mysql
     expose:
       - 3306
+    volumes:
+      - ./mariadb:/var/lib/mysql
   redis:
-    image: docker.io/redis:alpine
+    image: redis:alpine
     container_name: nextcloud_redis
-    hostname: nextcloud_redis
     restart: unless-stopped
     expose:
       - 6379
@@ -50,4 +54,8 @@ networks:
     ipam:
       driver: default
       config:
-      - subnet: 172.16.18.0/27
+        - subnet: 172.16.11.0/27
+  swag_default:
+    external: true
+  mailserver_default:
+    external: true
