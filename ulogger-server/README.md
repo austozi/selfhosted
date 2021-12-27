@@ -1,6 +1,8 @@
 # μlogger
 
-[μLogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. This is the server component. The [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available on [F-Droid](https://f-droid.org).
+[μLogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. These files are used to dockerise the server component. The [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available on [F-Droid](https://f-droid.org).
+
+This application is intended to be run behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag).
 
 ## Build
 
@@ -11,8 +13,6 @@ The script will download the specified release of the source code from upstream,
 ## Install
 
 Run `docker-compose up -d`. The default username and password are both 'admin'.
-
-This application is intended to be run behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag).
 
 ## Known issues
 
