@@ -1,6 +1,6 @@
 # Pi-hole
 
-[Pi-hole](https://pi-hole.net/) is a network-level ad-blocker and DNS server.
+[Pi-hole](https://pi-hole.net/) is a network-level ad-blocker, DNS server and DHCP server.
 
 ## Install
 
