@@ -12,7 +12,7 @@ The script will download the specified release of the source code from upstream,
 
 Run `docker-compose up -d`.
 
-The default username and password are both 'admin'.
+This application is intended to be run behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag). The default username and password are both 'admin'.
 
 ## Known issues
 
