@@ -10,7 +10,7 @@ Additional configurations can be specified in ./config/www/.env.
 
 ## Security
 
-First, read the upstream project's [security guide](https://www.bookstackapp.com/docs/admin/security/). The following notes describe adaptations for the [SWAG container](https://github.com/linuxserver/docker-swag) as the reverse proxy.
+First, read the upstream project's [security guide](https://www.bookstackapp.com/docs/admin/security/). The following notes describe the adaptations using the [SWAG container](https://github.com/linuxserver/docker-swag) as the reverse proxy.
 
 1. To set up fail2ban to block brute-force login attempts, add the following line to the .env file:
 
