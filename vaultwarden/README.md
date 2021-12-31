@@ -14,7 +14,21 @@ Read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for
 
 Copy the *.local files to /path/to/swag/config/fail2ban/filter.d/.
 
-Jails are defined in ./config/fail2ban/jail.local, **NOT** in ./config/fail2ban/jail.d/vaultwarden(-admin).local as suggested by the Vaultwarden Wiki.
+Jails are defined in /path/to/swag/config/fail2ban/jail.local, **NOT** in /path/to/swag/config/fail2ban/jail.d/*.local, as suggested by the Vaultwarden Wiki. Add the following lines to ./config/fail2ban/jail.local:
+
+```
+[vaultwarden]
+enabled = true
+port = 80,443,8081
+filter = vaultwarden
+logpath = /config/log/vaultwarden/vaultwarden.log
+
+[vaultwarden-admin]
+enabled = true
+port = 80,443,8081
+filter = vaultwarden-admin
+logpath = /config/log/vaultwarden/vaultwarden.log
+```
 
 Mount the log directory for the Vaultwarden container to the SWAG container, by adding the following to the docker-compose.yml file for the SWAG container:
 
