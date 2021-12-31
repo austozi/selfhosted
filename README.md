@@ -10,7 +10,7 @@ The following table summarises the application features that may help determine 
 | Barcode Buddy      | Username & Password    | -    | Yes        |
 | BookStack          | Username & Password    | TOTP | -          |
 | Calibre-Web        | Username & Password    | -    | Yes        |
-| ChangeDetection.io | Password only          | -    | -          |
+| changedetection.io | Password only          | -    | -          |
 | File Browser       | Username & Password    | -    | -          |
 | Firefly III        | Username & Password    | TOTP | -          |
 | FreshRSS           | Username & Password    | -    | Yes        |
