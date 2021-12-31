@@ -1,4 +1,4 @@
-# selfhosted
+# Selfhosted
 Resources relating to selfhosted services
 
 ## Applications with built-in 2FA (TOTP)
