@@ -2,7 +2,7 @@ version: "3"
 services:
   barcodebuddy:
     image: f0rc3/barcodebuddy-docker:arm32v7-latest
-    container_name: barcode-buddy
+    container_name: barcodebuddy
     restart: unless-stopped
     environment:
       - TZ=Europe/London
