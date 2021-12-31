@@ -10,6 +10,8 @@ The mailer network is used to send email notifications using a private email ser
 
 ## Security
 
+First, read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for the hardening guide. Some additional notes are included below:
+
 Following deployment, enforce two-factor authentication and disable public internet access to the /admin directory in the web server configuration.
 
 The application log is located in ./config/log/vaultwarden.log. This can be used to formulate the filter for fail2ban. Failed login attempts are logged in the following format:
