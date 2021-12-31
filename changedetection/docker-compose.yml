@@ -1,0 +1,26 @@
+version: "3"
+services:
+  changedetection:
+    image: dgtlmoon/changedetection.io:latest
+    container_name: changedetection
+    restart: unless-stopped
+    volumes:
+      - ./config:/datastore
+    environment:
+      - PORT=5000
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - BASE_URL=https://example.com # Change me
+      - USE_X_SETTINGS=1
+    expose:
+      - 5000
+    networks:
+      - proxy
+networks:
+  proxy:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.11.0/29
