@@ -18,7 +18,7 @@ First, read the upstream project's [security guide](https://www.bookstackapp.com
   LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
   ```
   
-2. Copy the *.local files to the /path/to/swag/config/fail2ban/filter.d/ directory.
+2. Copy the bookstack.local file to the /path/to/swag/config/fail2ban/filter.d/ directory.
 3. Add the following lines to /path/to/swag/config/fail2ban/jail.local:
 
   ```
