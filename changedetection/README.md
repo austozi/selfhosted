@@ -1,4 +1,4 @@
-# ChangeDetection.io
+# changedetection.io
 
 This application monitors changes on websites and sends a notification when it detects a change.
 
