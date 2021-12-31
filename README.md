@@ -19,6 +19,7 @@ The following table summarises the application features that may help determine 
 | Hammond            | Username & Password    | -    | -          |
 | Heimdall           | Password only          | -    | -          |
 | Home Assistant     | Username & Password    | TOTP | Yes        |
+| Homer              | -                      | -    | -          |
 | Jellyfin           | Username & Password    | -    | Yes        |
 | Navidrome          | Username & Password    | -    | Yes        |
 | Nextcloud          | Username & Password    | TOTP | Yes        |
