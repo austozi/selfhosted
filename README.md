@@ -3,7 +3,7 @@ Resources relating to selfhosted services
 
 | Application        | Primary authentication | 2FA  | Mobile app |
 |--------------------|------------------------|------|------------|
-| Barcode Buddy      | Username & password    | -    | Yes        |
+| Barcode Buddy      | Username & Password    | -    | Yes        |
 | BookStack          | Username & Password    | TOTP | -          |
 | Calibre-Web        | Username & Password    | -    | Yes        |
 | ChangeDetection.io | Password only          | -    | -          |
