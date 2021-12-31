@@ -14,4 +14,14 @@ Resources relating to selfhosted services
 | Jellyfin           | Yes    | Yes            | None  | 
 | Navidrome          | Yes    | Yes            | None  | 
 | Nextcloud          | Yes    | Yes            | OTP   |
+| Papermerge         | Yes    | Yes            | Basic |
+| PiGallery 2        | Yes    | Yes            | Basic |
+| Planka             | Yes    | Yes            | Basic |
+| Roundcube          | Yes    | Yes            | OTP   |
 | Vaultwarden        | Yes    | Yes            | OTP   |
+| SheetAble          | Yes    | Yes            | Basic |
+| Snapdrop           | No     | No             | None  |
+| Tandoor            | Yes    | Yes            | Basic |
+| Wallabag           | Yes    | Yes            | OTP   |
+| Wiki.js            | Yes    | Yes            | OTP   |
+| μLogger            | Yes    | Yes            | None  |
