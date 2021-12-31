@@ -31,7 +31,7 @@ The following table summarises the application features that may help determine 
 | Roundcube          | Username & Password    | TOTP | -          |
 | Scrutiny           | -                      | -    | -          |
 | SheetAble          | Username & Password    | -    | -          |
-| Snapdrop           | -                      | -    | -          |
+| Snapdrop           | -                      | -    | Yes        |
 | Snipe-IT           | Username & Password    | TOTP | -          |
 | Syncthing          | Username & Password    | -    | -          |
 | Tandoor            | Username & Password    | -    | -          |
