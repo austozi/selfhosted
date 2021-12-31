@@ -1,5 +1,9 @@
 # Selfhosted
-Resources relating to selfhosted services
+Resources relating to selfhosted services.
+
+## Security
+
+The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary.
 
 | Application        | Primary authentication | 2FA  | Mobile app |
 |--------------------|------------------------|------|------------|
