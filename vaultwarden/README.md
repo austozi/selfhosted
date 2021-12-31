@@ -9,3 +9,13 @@ To deploy the application, do `docker-compose up -d -f docker-compose.yml`.
 The mailer network is used to send email notifications using a private email server. If a public email server is used, the mailer network can be safely removed from the docker-compose.yml file.
 
 Following deployment, enforce two-factor authentication and disable public internet access to the /admin directory in the web server configuration.
+
+## Hardening
+
+### fail2ban
+
+The application log is located in ./config/log/vaultwarden.log. Failed login attempts are logged in the following format:
+
+```
+[2021-12-31 17:30:57.948][vaultwarden::api::identity][ERROR] Username or password is incorrect. Try again. IP: 12.34.56.78. Username: user@example.com.
+```
