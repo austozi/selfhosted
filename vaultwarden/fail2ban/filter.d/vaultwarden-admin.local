@@ -1,0 +1,8 @@
+# /path/to/swag/config/fail2ban/filter.d/vaultwarden-admin.local
+
+[INCLUDES]
+before = common.conf
+
+[Definition]
+failregex = ^.*Invalid admin token\. IP: <ADDR>.*$
+ignoreregex =
