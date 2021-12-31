@@ -1,37 +1,31 @@
 # Selfhosted
 Resources relating to selfhosted services
 
-## Applications with built-in 2FA (TOTP)
-
-* BookStack
-* Firefly III
-* Nextcloud
-* Roundcube
-* Snipe-IT
-* Vaultwarden
-* Wallabag
-* Wiki.js
-
-## Applications with HTTP basic authentication
-
-* ChangeDetection.io
-* File Browser
-* Hammond
-* Heimdall
-* Papermerge
-* PiGallery 2
-* Planka
-* pyLoad
-* Scrutiny
-* SheetAble
-* Tandoor
-
-## Applications with mobile apps that require API access
-
-* Barcode Buddy
-* FreshRSS
-* Grocy
-* Jellyfin
-* Navidrome
-* Snapdrop
-* μLogger
+| Application        | Primary authentication | 2FA  | Mobile app |
+|--------------------|------------------------|------|------------|
+| Barcode Buddy      | Username & password    | -    | Yes        |
+| BookStack          | Username & Password    | TOTP | -          |
+| ChangeDetection.io | Password only          | -    | -          |
+| File Browser       | Username & Password    | -    | -          |
+| Firefly III        | Username & Password    | TOTP | -          |
+| FreshRSS           | Username & Password    | -    | Yes        |
+| Grocy              | Username & Password    | -    | Yes        |
+| Hammond            | Username & Password    | -    | -          |
+| Heimdall           | Password only          | -    | -          |
+| Jellyfin           | Username & Password    | -    | Yes        |
+| Navidrome          | Username & Password    | -    | Yes        |
+| Nextcloud          | Username & Password    | TOTP | Yes        |
+| Papermerge         | Username & Password    | -    | -          |
+| PiGallery 2        | Username & Password    | -    | -          |
+| Planka             | Username & Password    | -    | -          |
+| pyLoad             | Username & Password    | -    | -          |
+| Roundcube          | Username & Password    | TOTP | -          |
+| Scrutiny           | -                      | -    | -          |
+| SheetAble          | Username & Password    | -    | -          |
+| Snapdrop           | -                      | -    | -          |
+| Snipe-IT           | Username & Password    | TOTP | -          |
+| Tandoor            | Username & Password    | -    | -          |
+| Vaultwarden        | Username & Password    | TOTP | Yes        |
+| Wallabag           | Username & Password    | TOTP | Yes        |
+| Wiki.js            | Username & Password    | TOTP | -          |
+| μLogger            | Username & Password    | -    | Yes        |
