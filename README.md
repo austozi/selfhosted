@@ -5,6 +5,7 @@ Resources relating to selfhosted services
 |--------------------|------------------------|------|------------|
 | Barcode Buddy      | Username & password    | -    | Yes        |
 | BookStack          | Username & Password    | TOTP | -          |
+| Calibre-Web        | Username & Password    | -    | Yes        |
 | ChangeDetection.io | Password only          | -    | -          |
 | File Browser       | Username & Password    | -    | -          |
 | Firefly III        | Username & Password    | TOTP | -          |
