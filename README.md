@@ -10,23 +10,30 @@ Resources relating to selfhosted services
 | File Browser       | Username & Password    | -    | -          |
 | Firefly III        | Username & Password    | TOTP | -          |
 | FreshRSS           | Username & Password    | -    | Yes        |
+| Gotify             | Username & Password    | -    | Yes        |
 | Grocy              | Username & Password    | -    | Yes        |
 | Hammond            | Username & Password    | -    | -          |
 | Heimdall           | Password only          | -    | -          |
+| Home Assistant     | Username & Password    | TOTP | Yes        |
 | Jellyfin           | Username & Password    | -    | Yes        |
 | Navidrome          | Username & Password    | -    | Yes        |
 | Nextcloud          | Username & Password    | TOTP | Yes        |
 | Papermerge         | Username & Password    | -    | -          |
+| Pi-hole Dashboard  | Password only          | -    | -          |
 | PiGallery 2        | Username & Password    | -    | -          |
 | Planka             | Username & Password    | -    | -          |
+| Portainer          | Username & Password    | -    | -          |
 | pyLoad             | Username & Password    | -    | -          |
 | Roundcube          | Username & Password    | TOTP | -          |
 | Scrutiny           | -                      | -    | -          |
 | SheetAble          | Username & Password    | -    | -          |
 | Snapdrop           | -                      | -    | -          |
 | Snipe-IT           | Username & Password    | TOTP | -          |
+| Syncthing          | Username & Password    | -    | -          |
 | Tandoor            | Username & Password    | -    | -          |
+| Uptime Kuma        | Username & Password    | TOTP | -          |
 | Vaultwarden        | Username & Password    | TOTP | Yes        |
 | Wallabag           | Username & Password    | TOTP | Yes        |
+| WebSSH             | Username & Password    | TOTP | -          |
 | Wiki.js            | Username & Password    | TOTP | -          |
 | μLogger            | Username & Password    | -    | Yes        |
