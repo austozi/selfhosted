@@ -18,5 +18,5 @@ Be sure to mount the log directory for the Vaultwarden container to the SWAG con
 
 ```
 volumes:
-  - "/path/to/vaultwarden/config/log:/path/to/swag/config/log/vaultwarden:ro"
+  - "/path/to/vaultwarden/config/log:/config/log/vaultwarden:ro"
 ```
