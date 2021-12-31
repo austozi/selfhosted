@@ -1,0 +1,26 @@
+version: "3"
+services:
+  barcodebuddy:
+    image: f0rc3/barcodebuddy-docker:arm32v7-latest
+    container_name: barcode-buddy
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/London
+      - PUID=1000
+      - PGID=1000
+      - ATTACH_BARCODESCANNER=false
+      - IGNORE_SSL_CA=false
+      - IGNORE_SSL_HOST=false
+    volumes:
+      - ./config:/config
+    expose:
+      - 80
+      - 443
+    networks:
+      - proxy
+networks:
+  proxy:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.3.0/29
