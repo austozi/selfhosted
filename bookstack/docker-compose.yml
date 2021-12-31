@@ -1,57 +1,57 @@
 version: "3"
 services:
   bookstack:
-    image: linuxserver/bookstack:latest
-    container_name: bookstack
-    restart: unless-stopped
+    image: "linuxserver/bookstack:latest"
+    container_name: "bookstack"
+    restart: "unless-stopped"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - DB_HOST=bookstack_db
-      - DB_USERNAME=bookstack
-      - DB_PASSWORD=mysql_password # Change me
-      - DB_DATABASE=bookstack
-      - APP_URL=https://example.com # Change me
+      PUID: 1000
+      PGID: 1000
+      TZ: "Europe/London"
+      DB_HOST: "bookstack_db"
+      DB_USERNAME: "bookstack"
+      DB_PASSWORD: "MYSQL_USER_PASSWORD" # Change me
+      DB_DATABASE: "bookstack"
+      APP_URL: "https://example.com"  # Change me
     volumes:
-      - ./config:/config
+      - "./config:/config"
     expose:
       - 80
     depends_on:
-      - db
-      - redis
+      - "db"
+      - "redis"
     networks:
-      - proxy
-      - backend
+      - "proxy"
+      - "backend"
   db:
-    image: yobasystems/alpine-mariadb:10.5.9
-    container_name: bookstack_db
-    restart: unless-stopped
+    image: "yobasystems/alpine-mariadb:10.5.9"
+    container_name: "bookstack_db"
+    restart: "unless-stopped"
     environment:
-      - TZ=Europe/London
-      - MYSQL_ROOT_PASSWORD=mysql_root_password # Change me
-      - MYSQL_DATABASE=bookstack
-      - MYSQL_USER=bookstack
-      - MYSQL_PASSWORD=mysql_password # Change me
-      - MYSQL_CHARSET=utf8mb4
-      - MYSQL_COLLATION=utf8mb4_general_ci
+      TZ: "Europe/London"
+      MYSQL_ROOT_PASSWORD: "MYSQL_ROOT_PASSWORD" # Change me
+      MYSQL_DATABASE: "bookstack"
+      MYSQL_USER: "bookstack"
+      MYSQL_PASSWORD: "MYSQL_USER_PASSWORD" # Change me
+      MYSQL_CHARSET: "utf8mb4"
+      MYSQL_COLLATION: "utf8mb4_general_ci"
     expose:
       - 3306
     volumes:
-      - ./mariadb:/var/lib/mysql
+      - "./mariadb:/var/lib/mysql"
     networks:
-      - backend
+      - "backend"
   redis:
-    image: redis:alpine
+    image: "redis:alpine"
     container_name: bookstack_redis
-    restart: unless-stopped
+    restart: "unless-stopped"
     expose:
       - 6379
     networks:
-      - backend
+      - "backend"
 networks:
   backend:
-    driver: bridge
+    driver: "bridge"
     ipam:
       config:
       - subnet: 172.16.19.0/29
