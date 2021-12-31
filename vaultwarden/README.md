@@ -10,22 +10,4 @@ The mailer network is used to send email notifications using a private email ser
 
 ## Security
 
-First, read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for the hardening guide. Some additional notes are included below:
-
-Following deployment, enforce two-factor authentication and disable public internet access to the /admin directory in the web server configuration.
-
-The application log is located in ./config/log/vaultwarden.log. This can be used to formulate the filter for fail2ban. Failed login attempts are logged in the following format:
-
-```
-# Incorrect username or password:
-[2021-12-31 17:30:57.948][vaultwarden::api::identity][ERROR] Username or password is incorrect. Try again. IP: 12.34.56.78. Username: user@example.com.
-
-# Incorrect TOTP code:
-[2021-12-31 17:40:03.384][vaultwarden::api::core::two_factor::authenticator][ERROR] Invalid TOTP code! Server time: 2021-12-31 17:40:03 UTC IP: 12.34.56.78
-```
-
-Failed login attempts are also associated with a bad request entry in the log, in the following format:
-
-```
-[2021-12-31 17:40:03.384][response][INFO] POST /identity/connect/token (login) => 400 Bad Request
-```
+Read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for the hardening guide.
