@@ -23,7 +23,6 @@ services:
     networks:
       - proxy
       - backend
-      # Does not need mailserver as uses @newcastle.ac.uk domain
   db:
     image: yobasystems/alpine-mariadb:10.5.9
     container_name: bookstack_db
