@@ -8,7 +8,7 @@ Run `docker-compose up -d -f`.
 
 ## Security
 
-To set up fail2ban with the [SWAG container](https://github.com/linuxserver/docker-swag) was the reverse proxy, copy calibre-web.local to /path/to/swag/config/fail2ban/filter.d/ and add the following line to /path/to/swag/config/fail2ban/jail.local:
+To set up fail2ban with the [SWAG container](https://github.com/linuxserver/docker-swag) as the reverse proxy, copy calibre-web.local to /path/to/swag/config/fail2ban/filter.d/ and add the following line to /path/to/swag/config/fail2ban/jail.local:
 
 ```
 [calibre-web]
