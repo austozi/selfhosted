@@ -6,7 +6,7 @@
 
 Run `docker-compose up -d`. 
 
-This setup uses the docker.io/linuxserver/grocy image with SQLite.
+This setup uses the [docker.io/linuxserver/grocy](https://hub.docker.com/r/linuxserver/grocy) image with SQLite.
 
 The Android client lags behind the server in version upgrades, so there can be incompatibilities as new server versions are released. To ensure compatibility of the Android client with the server, this setup pins the Docker image to a specific version and therefore requires manual upgrades.
 
