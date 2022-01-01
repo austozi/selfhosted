@@ -11,3 +11,7 @@ Execute `docker build -t austozi/webssh:latest .` (note: the trailing period is 
 ## Install
 
 Run `docker-compose up -d`.
+
+## Security
+
+This application should be deployed behind a reverse proxy with HTTP basic authentication, monitored by fail2ban.
