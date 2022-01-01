@@ -1,22 +1,28 @@
----
 version: "3"
 services:
   freshrss:
-    image: docker.io/linuxserver/freshrss:latest
-    container_name: freshrss
-    restart: unless-stopped
+    image: "linuxserver/freshrss:latest"
+    container_name: "freshrss"
+    restart: "unless-stopped"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
+      PUID: 1001
+      GUID: 1001
+      TZ: "Europe/London"      
     volumes:
-      - ./config:/config
+      - "./config:/config"
     expose:
       - 80
+    networks:
+      - "proxy"
+      - "mailer"
 networks:
-  default:
-    driver: bridge
+  proxy:
+    driver: "bridge"
     ipam:
-      driver: default
       config:
-      - subnet: 172.16.32.0/27
+        - subnet: "172.16.25.0/29"
+  mailer:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: "172.16.26.0/29"
