@@ -1,0 +1,8 @@
+# /path/to/swag/config/fail2ban/filter.d/calibre-web.local
+
+[INCLUDES]
+before = common.conf
+
+[Definition]
+failregex = ^.*Login failed for user .+ IP-address: <ADDR>.*$
+ignoreregex =
