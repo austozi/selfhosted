@@ -1,13 +1,18 @@
 version: "3"
 services:
   webssh:
-    image: austozi/webssh:latest
-    container_name: webssh
-    restart: unless-stopped
+    image: "austozi/webssh:latest"
+    container_name: "webssh"
+    restart: "unless-stopped"
+    volumes:
+      - "./config/log:/config/log"
     expose:
       - 8888
     networks:
-      - swag_default
+      - "proxy"
 networks:
-  swag_default:
-    external: true
+  proxy:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: "172.16.56.0/29"
