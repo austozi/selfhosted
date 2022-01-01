@@ -18,8 +18,10 @@ RUN pip3 install \
 
 RUN pip3 install webssh
 
+RUN mkdir -p /config/log
+
 EXPOSE 8888
 
-ENTRYPOINT "wssh"
+ENTRYPOINT "wssh" "--log-file-prefix=/config/log/wssh.log" "--port=8888" "--logging=info"
 
-CMD ["wssh"]
+CMD ["wssh", "--log-file-prefix=/config/log/wssh.log", "--port=8888", "--logging=info"]
