@@ -3,7 +3,7 @@ Resources relating to selfhosted services.
 
 ## Security
 
-The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary. I usually put applications without two-factor authentication (2FA) behind HTTP basic authentication. However, doing so breaks the mobile apps.
+The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary. I usually implement HTTP basic authentication as an additional security layer for public-facing applications that do not offer built-in two-factor authentication (2FA). However, doing so breaks the mobile apps.
 
 | Application        | Primary authentication | 2FA  | Mobile app |
 |--------------------|------------------------|------|------------|
