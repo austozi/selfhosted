@@ -8,6 +8,8 @@ Run `docker-compose up -d -f`.
 
 ## Security
 
+Calibre-Web offers OPDS, which some ebook readers use to browse the catalogue. Putting Calibre-Web behind a reverse proxy like NGINX with HTTP basic authentication will break this functionality, unless an exception is made to allow public connection to the /opds directory on the Calibre-Web instance. In that case, fail2ban can be used mitigate the risk of unauthorised access.
+
 To set up fail2ban with the [SWAG container](https://github.com/linuxserver/docker-swag) as the reverse proxy, copy calibre-web.local to /path/to/swag/config/fail2ban/filter.d/ and add the following line to /path/to/swag/config/fail2ban/jail.local:
 
 ```
