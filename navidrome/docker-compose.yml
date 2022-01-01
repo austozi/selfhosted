@@ -1,21 +1,24 @@
 version: "3"
 services:
   navidrome:
-    image: deluan/navidrome:latest
-    container_name: navidrome
-    restart: unless-stopped
+    image: "deluan/navidrome:latest"
+    container_name: "navidrome"
+    restart: "unless-stopped"
     user: "1000:1000"
     environment:
       # Full configuration options here:
       # https://www.navidrome.org/docs/usage/configuration-options/
-      ND_UILOGINBACKGROUNDURL: https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg
+      ND_UILOGINBACKGROUNDURL: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg"
     volumes:
-      - ./config:/data
-      - ./music:/music:ro
+      - "./config:/data"
+      - "./music:/music:ro"
     expose:
       - 4533
     networks:
-      - swag_default
+      - "proxy"
 networks:
-  swag_default:
-    external: true
+  proxy:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: "172.16.30.0/29"
