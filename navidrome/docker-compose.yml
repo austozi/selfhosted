@@ -5,6 +5,7 @@ services:
     container_name: "navidrome"
     restart: "unless-stopped"
     user: "1000:1000"
+    entrypoint: "sh -c '/app/navidrome 2>&1 | tee /data/navidrome.log'"
     environment:
       # Full configuration options here:
       # https://www.navidrome.org/docs/usage/configuration-options/
