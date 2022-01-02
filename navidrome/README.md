@@ -4,7 +4,9 @@
 
 ## Install
 
-Execute `docker-compose up -d`.
+Run `docker-compose up -d`.
+
+### Security
 
 To set up fail2ban for this Navidrome container with a [SWAG](https://github.com/linuxserver/docker-swag) container as the reverse proxy:
 
