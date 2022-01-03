@@ -1,6 +1,6 @@
 # FreshRSS
 
-[FreshRSS](https://github.com/FreshRSS/FreshRSS) is a news feed aggregator. This is the server component. Various mobile clients are also available.
+[FreshRSS](https://github.com/FreshRSS/FreshRSS) is a news feed aggregator. This is the server component. Various clients are also available.
 
 ## Install
 
