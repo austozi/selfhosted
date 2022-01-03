@@ -13,7 +13,7 @@
 
 ### User accounts
 
-This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://bookstack.example.com) and follow the on-screen instructions to set up a user account and enable the application to communicate with Grocy. This only needs to be done once.
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://bookstack.example.com) and follow the on-screen instructions to set up a user account. This only needs to be done once.
 
 The default username is **admin<span></span>@admin.com**. The default password is **password**. Be sure to change these upon first successful login.
 
