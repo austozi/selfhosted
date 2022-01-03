@@ -22,7 +22,3 @@ The application will need to be configured manually, as the initialisation scrip
 1. Navigate to the application in the browser (e.g. https://ulogger.example.com) and follow the instructions to set up the admin account.
 2. Disable manual configuration in the docker-compose.yml file, by changing `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0`.
 3. Recreate the container by executing, in the same directory where the docker-compose.yml file is located, `docker-compose up -d`.
-
-## Known issues
-
-There is an upstream bug in release 1.0 where the SQLite database is read-only by default, thus the application cannot save any data to the database. A [fix has been merged in the master branch](https://github.com/bfabiszewski/ulogger-server/pull/137) but at the time of writing, the latest release (1.0) does not yet incorporate this fix. I have attempted a hack in the docker-compose.yml file to change the file permissions after the init.sh script. This makes the database writable in the meantime while we await the next release from upstream.
