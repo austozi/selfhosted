@@ -2,7 +2,7 @@
 
 [μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. This is the server component. An [Android client](https://github.com/bfabiszewski/ulogger-android) is available.
 
-##Build
+## Build
 
 The build.sh script is used to dockerise the application, since an official Docker image for the armhf architecture is unavailable. The script will download the specified release of the source code from upstream and build the image for use with an SQLite database. It will then delete the source files after the build, and push the newly built image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
 
