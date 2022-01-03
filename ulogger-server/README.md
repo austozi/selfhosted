@@ -13,7 +13,7 @@ The script will download the specified release of the source code from upstream 
 ## Install
 
 1. Download the docker-compose.yml file to the Docker host.
-2. If reusing an existing SQLite database, change `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0` in the docker-compose.yml file.
+2. If reinstalling over an existing instance, change `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0` in the docker-compose.yml file to reuse the existing configurations.
 3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
 
 ## Configure
