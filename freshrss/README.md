@@ -52,3 +52,4 @@ The following steps are designed to be used with a SWAG container as the reverse
      - "/path/to/freshrss/config/log/nginx:/config/log/freshrss:ro"
    ```
 5. Recreate the SWAG container by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
+6. Verify that fail2ban is working for FreshRSS by executing on the Docker host: `docker exec -it swag fail2ban-client status freshrss`. Simulate a few failed login attempts in the [Tor Browser](https://www.torproject.org/download/) and check that they are captured by fail2ban and the remote IP is banned as expected. 
