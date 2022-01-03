@@ -44,10 +44,10 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
 3. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
     ```
     [ulogger]
-    enabled  = true
-    port     = http,https
-    filter   = ulogger
-    logpath  = /config/log/ulogger/ulogger.log
+    enabled = true
+    port    = http,https
+    filter  = ulogger
+    logpath = /config/log/ulogger/ulogger.log
     ```
 4. Mount this application's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
    ```
