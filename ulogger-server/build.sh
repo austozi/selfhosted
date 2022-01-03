@@ -19,9 +19,6 @@ echo "Extracting source..."
 unzip "./build/release-${VERSION}.zip" -d ./build
 mv -v "./build/ulogger-server-${VERSION}" "./build/${VERSION}"
 
-echo "Disabling Docker volume creation..."
-sed -i s/VOLUME/#VOLUME/ "./build/${VERSION}/Dockerfile"
-
 echo "Building Docker image for SQLite..."
 docker build -t $IMAGE:latest -t $IMAGE:$VERSION --build-arg DB_DRIVER=sqlite ./build/${VERSION}
 
