@@ -4,16 +4,21 @@
 
 ## Install
 
-:information_source: The docker-compose.yml file specifies the ARM image by default. Adjust the image tag accordingly for other architectures.
-
 This application needs to be able to reach the Grocy instance, either via the public internet or via an internal network.
 
 1. Download the docker-compose.yml file to the Docker host.
 2. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
+:information_source: The docker-compose.yml file specifies the ARM image by default. Adjust the image tag accordingly for other architectures.
+
 ## Configuration
 
 This application needs to be configured manually on first use. To configure the instance, navigate to the application in the web browser (e.g. https://barcodebuddy.example.com) and follow the on-screen instructions. This only needs to be done once.
+
+:information_source: Note:
+
+1. The Grocy instance URL needs to include /api/ at the end (e.g. https://grocy.example.com/api/).
+2. Get the API token from the Grocy instance, under the 'Manage API keys' menu.
 
 ### fail2ban
 
