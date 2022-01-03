@@ -3,7 +3,7 @@ Resources relating to selfhosted services.
 
 ## Security
 
-The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary. I usually implement HTTP basic authentication as an additional security layer for public-facing applications that do not offer built-in two-factor authentication (2FA). However, doing so breaks the mobile apps.
+The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary. Enforce two-factor authentication (2FA) for any application that offers it. For any that do not, implement HTTP basic authentication as an additional security layer if it is to be made available on the public internet. However, be aware that HTTP basic authentication will break most the mobile apps that need access to the public API.
 
 | Application        | Primary authentication | 2FA  | Mobile app | fail2ban |
 |--------------------|------------------------|------|------------|----------|
