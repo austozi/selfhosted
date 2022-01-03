@@ -42,7 +42,6 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
     [Definition]
     failregex   = auth_error.+\"<ADDR>\"$
     ignoreregex =
-
     ```
 3. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
     ```
