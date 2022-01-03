@@ -15,14 +15,12 @@ Failed login attempted are logged in the NGINX access log at /path/to/freshrss/c
 ```
 1.2.3.4 - - [03/Jan/2022:14:01:52 +0000] "POST /i/?c=auth&a=login HTTP/1.1" 403 2313 "-" "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"
 ```
-
-The container needs to be [configured to log the IP address of the remote client](https://github.com/austozi/selfhosted/wiki/Make-container-log-remote-IP) rather than the reverse proxy.
-
 #### Setting up fail2ban
 
 The following steps are designed to be used with a SWAG container as the reverse proxy. Fail2ban is implemented by default in the SWAG image, but needs to be configured for FreshRSS.
 
-1. Create a fail2ban filter for FreshRSS at /path/to/swag/config/fail2ban/filter.d/freshrss.local:
+1. [configure the container to log the IP address of the remote client](https://github.com/austozi/selfhosted/wiki/Make-container-log-remote-IP) rather than the reverse proxy.
+2. Create a fail2ban filter for FreshRSS at /path/to/swag/config/fail2ban/filter.d/freshrss.local:
     ```
     # /path/to/swag/config/fail2ban/filter.d/freshrss.local
     
@@ -33,7 +31,7 @@ The following steps are designed to be used with a SWAG container as the reverse
     failregex   = ^<ADDR>.+ 403 [0-9]+
     ignoreregex =
     ```
-2. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
+3. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
     ```
     [freshrss]
     enabled  = true
