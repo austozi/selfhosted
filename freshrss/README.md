@@ -17,7 +17,7 @@ Failed login attempted are logged in the NGINX access log at ./config/log/nginx/
 At the time of writing, the NGINX instance included in the Docker image logs the IP address of the reverse proxy instead of the remote client. To log the latter, add the following to the default NGINX site configuration file at ./config/nginx/site-confs/default:
 
 ```
-# display real ip in nginx logs when connected through reverse proxy via docker network
+# capture IP address of remote client
 set_real_ip_from 172.0.0.0/8;
 real_ip_header X-Forwarded-For;
 ```
