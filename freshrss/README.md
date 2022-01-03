@@ -16,14 +16,7 @@ Failed login attempted are logged in the NGINX access log at /path/to/freshrss/c
 1.2.3.4 - - [03/Jan/2022:14:01:52 +0000] "POST /i/?c=auth&a=login HTTP/1.1" 403 2313 "-" "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"
 ```
 
-At the time of writing, the NGINX instance included in the Docker image logs the IP address of the reverse proxy instead of the remote client. To log the latter, add the following to the default NGINX site configuration file at /path/to/freshrss/config/nginx/site-confs/default:
-
-```
-# capture IP address of remote client
-set_real_ip_from 172.0.0.0/8;
-real_ip_header X-Forwarded-For;
-```
-This addition is necessary for fail2ban to correctly identify the remote IP and ban it in case of repeated failed login attempts.
+The container needs to be [configured to log the IP address of the remote client](https://github.com/austozi/selfhosted/wiki/Make-container-log-remote-IP) rather than the reverse proxy.
 
 #### Setting up fail2ban
 
