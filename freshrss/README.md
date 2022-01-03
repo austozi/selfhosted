@@ -6,6 +6,8 @@
 
 Download the docker-compose.yml to a directory on the Docker host and execute `docker-compose up -d` in the same directory.
 
+## Configuration
+
 ### Security
 
 Failed login attempted are logged in the NGINX access log at /path/to/freshrss/config/log/nginx/access.log, in the following format:
