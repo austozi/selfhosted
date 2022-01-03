@@ -22,9 +22,9 @@ The default username is **admin@admin.com**. The default password is **password*
 These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
 
 1. Add the following line to the /path/to/bookstack/config/www/.env file:
-  ```
-  LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
-  ```
+    ```
+    LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
+    ```
 1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
 1. Append the [relevant jail](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/jail.local) to /path/to/swag/config/fail2ban/jail.local on the Docker host.
 1. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG:
@@ -32,5 +32,5 @@ These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fa
     volumes:
       - "../bookstack/config/log/nginx:/config/log/bookstack:ro"
     ```
-5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
-6. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
+1. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
+1. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
