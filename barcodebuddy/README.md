@@ -22,7 +22,7 @@ This application needs to be configured manually on first use. To configure the 
 
 ### fail2ban
 
-These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG container](https://github.com/linuxserver/docker-swag) as the reverse proxy.
+These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
 
 1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
 2. Append the relevant jail to /path/to/swag/config/fail2ban/jail.local.
