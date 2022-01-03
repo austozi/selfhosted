@@ -34,8 +34,6 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
 
 1. Create a fail2ban filter at /path/to/swag/config/fail2ban/filter.d/ulogger.local:
     ```
-    # /path/to/swag/config/fail2ban/filter.d/ulogger.local
-    
     [INCLUDES]
     before      = common.conf
     
