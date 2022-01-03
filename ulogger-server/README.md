@@ -1,6 +1,6 @@
 # μlogger
 
-[μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. These files are used to dockerise the server component. The [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available on [F-Droid](https://f-droid.org).
+[μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. These files are used to dockerise the server component. An [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available.
 
 ## Build
 
