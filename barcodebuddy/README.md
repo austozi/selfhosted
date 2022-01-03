@@ -15,7 +15,7 @@ This application needs to be able to reach the Grocy instance, either via the pu
 
 This application needs to be configured manually on first use. To configure the instance, navigate to the application in the web browser (e.g. https://barcodebuddy.example.com) and follow the on-screen instructions. This only needs to be done once.
 
-:information_source: Note:
+:information_source: **Notes**:
 
 1. The Grocy instance URL needs to include /api/ at the end (e.g. https://grocy.example.com/api/).
 2. Get the API token from the Grocy instance, under the 'Manage API keys' menu.
