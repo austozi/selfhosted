@@ -1,65 +1,68 @@
 version: "3"
 services:
   nextcloud:
-    # Change tag manually to upgrade
-    image: linuxserver/nextcloud:22.2.2
-    container_name: nextcloud
-    restart: unless-stopped
+    image: "linuxserver/nextcloud:22.2.2" # Upgrade manually
+    container_name: "nextcloud"
+    restart: "unless-stopped"
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - DB_HOST=nextcloud_db
-      - DB_USERNAME=nextcloud
-      - DB_PASSWORD=Super-Secret-Password1
-      - DB_DATABASE=nextcloud
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Europe/London"
+      DB_HOST: "nextcloud_db"
+      DB_USERNAME: "nextcloud"
+      DB_PASSWORD: "SUPER_SECRET_PASSWORD" # Change me
+      DB_DATABASE: "nextcloud"
     volumes:
-      - ./config:/config
-      - ./data:/data
+      - "./config:/config"
+      - "./data:/data"
     expose:
       - 443
     depends_on:
-      - db
-      - redis
-    networks:
-      - default
-      - swag_default
-      - mailserver_default
+      - "db"
+      - "redis"
+    networks:    
+      - "backend"
+      - "mailer"
+      - "proxy"
   db:
-    # Change tag manually to upgrade
-    image: yobasystems/alpine-mariadb:10.5.9
-    container_name: nextcloud_db
-    restart: unless-stopped
+    image: "yobasystems/alpine-mariadb:10.5.9" # Upgrade manually
+    container_name: "nextcloud_db"
+    restart: "unless-stopped"
     environment:
-      - TZ=Europe/London
-      - MYSQL_ROOT_PASSWORD=Super-Secret-Password2
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=Super-Secret-Password1
-      - MYSQL_CHARSET=utf8mb4
-      - MYSQL_COLLATION=utf8mb4_general_ci
+      TZ: "Europe/London"
+      MYSQL_ROOT_PASSWORD: "SUPER_SECRET_ROOT_PASSWORD" # Change me
+      MYSQL_DATABASE: "nextcloud"
+      MYSQL_USER: "nextcloud"
+      MYSQL_PASSWORD: "SUPER_SECRET_PASSWORD" # Change me
+      MYSQL_CHARSET: "utf8mb4"
+      MYSQL_COLLATION: "utf8mb4_general_ci"
     expose:
       - 3306
     volumes:
-      - ./mariadb:/var/lib/mysql
+      - "./mariadb:/var/lib/mysql"
     networks:
-      - default
+      - "backend"
   redis:
-    image: redis:alpine
-    container_name: nextcloud_redis
-    restart: unless-stopped
+    image: "redis:alpine"
+    container_name: "nextcloud_redis"
+    restart: "unless-stopped"
     expose:
       - 6379
     networks:
-      - default
+      - "backend"
 networks:
-  default:
+  proxy:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: "172.16.16.0/29"
+  mailer:
     driver: bridge
     ipam:
-      driver: default
       config:
-        - subnet: 172.16.11.0/27
-  swag_default:
-    external: true
-  mailserver_default:
-    external: true
+        - subnet: "172.16.17.0/29"
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.16.18.0/29"
