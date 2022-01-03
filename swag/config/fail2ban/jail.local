@@ -1,0 +1,124 @@
+## Version 2020/05/10 - Changelog: https://github.com/linuxserver/docker-swag/commits/master/root/defaults/jail.local
+# This is the custom version of the jail.conf for fail2ban
+# Feel free to modify this and add additional filters
+# Then you can drop the new filter conf files into the fail2ban-filters
+# folder and restart the container
+
+[DEFAULT]
+
+# Changes the default ban action from "iptables-multiport", which causes issues on some platforms, to "iptables-allports".
+banaction = iptables-allports
+
+# "bantime" is the number of seconds that a host is banned.
+bantime  = 600
+
+# A host is banned if it has generated "maxretry" during the last "findtime"
+# seconds.
+findtime  = 600
+
+# "maxretry" is the number of failures before a host get banned.
+maxretry = 5
+
+[ssh]
+enabled  = false
+
+[nginx-http-auth]
+enabled  = true
+filter   = nginx-http-auth
+port     = http,https
+logpath  = /config/log/nginx/error.log
+
+[nginx-badbots]
+enabled  = true
+port     = http,https
+filter   = nginx-badbots
+logpath  = /config/log/nginx/access.log
+maxretry = 2
+
+[nginx-botsearch]
+enabled  = true
+port     = http,https
+filter   = nginx-botsearch
+logpath  = /config/log/nginx/access.log
+
+[nginx-deny]
+enabled  = true
+port     = http,https
+filter   = nginx-deny
+logpath  = /config/log/nginx/error.log
+
+# Custom filters added by austozi
+# listed in alphabetical order
+
+[barcodebuddy]
+enabled  = true
+port     = http,https
+filter   = barcodebuddy
+logpath  = /config/log/barcodebuddy/access.log
+
+[bookstack]
+enabled  = true
+port     = http,https
+filter   = bookstack
+logpath  = /config/log/bookstack/error.log
+
+[calibre-web]
+enabled  = true
+port     = http,https
+filter   = calibre-web
+logpath  = /config/log/calibre-web/calibre-web.log
+
+[filebrowser]
+enabled  = true
+port     = http,https,8080
+filter   = filebrowser
+logpath  = /config/log/filebrowser/filebrowser.log
+maxretry = 2
+
+[freshrss]
+enabled  = true
+port     = http,https
+filter   = freshrss
+logpath  = /config/log/freshrss/access.log
+
+[grocy]
+enabled  = true
+port     = http,https
+filter   = grocy
+logpath  = /config/log/grocy/access.log
+
+[jellyfin]
+enabled  = true
+port     = http,https,8096,8920,7359,1900
+filter   = jellyfin
+logpath  = /config/log/jellyfin/*.log
+
+[navidrome]
+enabled  = true
+port     = http,https
+filter   = navidrome
+logpath  = /config/log/navidrome/navidrome.log
+
+[nextcloud]
+enabled  = true
+port     = http,https
+filter   = nextcloud
+logpath  = /config/log/nextcloud/nextcloud.log 
+
+[ulogger]
+enabled  = true
+port     = http,https
+filter   = ulogger
+logpath  = /config/log/ulogger/access.log
+
+[vaultwarden]
+enabled  = true
+port     = 80,443,8081
+filter   = vaultwarden
+logpath  = /config/log/vaultwarden/vaultwarden.log
+
+[vaultwarden-admin]
+enabled  = true
+port     = 80,443,8081
+filter   = vaultwarden-admin
+logpath  = /config/log/vaultwarden/vaultwarden.log
