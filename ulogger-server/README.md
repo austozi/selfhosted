@@ -6,13 +6,22 @@
 
 1. Download the build.sh script.
 2. Make build.sh executable by executing `chmod +x ./build.sh` in the directory where it is located. 
-3. Execute build.sh: `./build.sh`
+3. Execute the script in the same directory: `./build.sh`
 
 The script will download the specified release of the source code from upstream and build the image for use with an SQLite database. It will then delete the source files after the build, and push the newly built image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
 
 ## Install
 
-Run `docker-compose up -d`. The default username and password are both 'admin'.
+1. Download the docker-compose.yml file to the Docker host.
+2. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
+
+## Configure
+
+The application will need to be configured manually, as the initialisation script in the current Docker build has a bug that prevents the database from being set up. Manual configuration circumvents that bug.
+
+1. Navigate to the application in the browser (e.g. https://ulogger.example.com) and follow the instructions to set up the admin account.
+2. Disable manual configuration in the docker-compose.yml file, by changing `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0`.
+3. Recreate the container by executing, the same directory where the docker-compose.yml file is located, `docker-compose up -d`.
 
 ## Known issues
 
