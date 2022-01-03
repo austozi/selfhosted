@@ -1,0 +1,32 @@
+version: "3"
+services:
+  swag:
+    image: "linuxserver/swag:latest"
+    container_name: "swag"
+    restart: "unless-stopped"
+    cap_add:
+      - "NET_ADMIN"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: "Europe/London"
+      URL: "example.com" # Change me
+      SUBDOMAINS: "wildcard"
+      VALIDATION: "duckdns"
+      DUCKDNSTOKEN: "<get-token-from-duckdns-account>"
+      EMAIL: "admin@example.com"
+      STAGING: "false"
+      ONLY_SUBDOMAINS: "true"
+      MAXMINDDB_LICENSE_KEY: "<get-license-key-from-maxmind>"
+    volumes:
+      - "./config:/config"
+      # Mount logs for fail2ban here:
+      - "../barcodebuddy/config/log/nginx:/config/log/barcodebuddy:ro"
+    ports:
+      - "443:443"
+      - "80:80"
+    networks:
+      - "barcodebuddy_proxy"
+networks:
+  barcodebuddy_proxy:
+    external: true
