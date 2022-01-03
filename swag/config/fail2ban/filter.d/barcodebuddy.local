@@ -1,0 +1,6 @@
+[INCLUDES]
+before      = common.conf
+
+[Definition]
+failregex   = ^<ADDR> .+ \/login\.php .+ 200 \d+ .+\/login\.php
+ignoreregex =

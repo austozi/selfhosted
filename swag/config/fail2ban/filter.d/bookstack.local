@@ -1,0 +1,6 @@
+[INCLUDES]
+before      = common.conf
+
+[Definition]
+failregex   = ^.*\"PHP message: Failed login for .+\" while reading response header from upstream, client: <ADDR>.*$
+ignoreregex =

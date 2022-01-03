@@ -1,0 +1,6 @@
+[INCLUDES]
+before      = common.conf
+
+[Definition]
+failregex   = auth_error.+\"<ADDR>\"$
+ignoreregex =

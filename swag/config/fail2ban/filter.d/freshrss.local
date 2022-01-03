@@ -1,0 +1,6 @@
+[INCLUDES]
+before      = common.conf
+
+[Definition]
+failregex   = ^<ADDR>.+ 403 [0-9]+
+ignoreregex =
