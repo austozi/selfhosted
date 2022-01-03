@@ -33,5 +33,5 @@ These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fa
     volumes:
       - "../barcodebuddy/config/log/nginx:/config/log/barcodebuddy:ro"
     ```
-5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the docker-compose.yml file for SWAG.
+5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
 6. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
