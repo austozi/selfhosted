@@ -9,7 +9,7 @@
 
 :information_source: Additional configurations may need to be specified in /path/to/bookstack/config/www/.env. 
 
-## Configuration
+## Configure
 
 ### User accounts
 
