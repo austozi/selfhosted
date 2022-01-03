@@ -41,4 +41,4 @@ The following table summarises the application features that may help determine 
 | Wallabag           | Username & Password    | TOTP | Yes        |          |
 | WebSSH             | Username & Password    | TOTP | -          |          |
 | Wiki.js            | Username & Password    | TOTP | -          |          |
-| μLogger            | Username & Password    | -    | Yes        | Yes      |
+| μlogger            | Username & Password    | -    | Yes        | Yes      |
