@@ -25,10 +25,11 @@ This application needs to be configured manually on first use. To configure the 
 These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
 
 1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
-2. Append the relevant jail to /path/to/swag/config/fail2ban/jail.local.
+2. Append the relevant jail to /path/to/swag/config/fail2ban/jail.local on the Docker host.
 3. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG.
     ```
     volumes:
       - "../barcodebuddy/config/log/nginx:/config/log/barcodebuddy:ro"
     ```
 5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the docker-compose.yml file for SWAG.
+6. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
