@@ -6,16 +6,15 @@
 
 Download the docker-compose.yml to a directory on the Docker host and execute `docker-compose up -d` in the same directory.
 
-## Configuration
+## Configure
 
-### Security
+### Create admin account
 
-Failed login attempted are logged in the NGINX access log at /path/to/freshrss/config/log/nginx/access.log, in the following format:
+1. Navigate to the application in the browser (e.g. https://freshrss.example.com). 
+2. If installing a new instance, follow the instructions to set up the admin account.
+3. If installing over an existing instance, the container will reuse the existing configurations.
 
-```
-1.2.3.4 - - [03/Jan/2022:14:01:52 +0000] "POST /i/?c=auth&a=login HTTP/1.1" 403 2313 "-" "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"
-```
-#### Setting up fail2ban
+### Set up fail2ban
 
 The following steps will configure fail2ban in a SWAG container as the reverse proxy.
 
@@ -39,10 +38,10 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
     filter   = freshrss
     logpath  = /config/log/freshrss/access.log
     ```
-4. Mount FreshRSS's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
+4. Mount this application's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
    ```
    volumes:
      - "/path/to/freshrss/config/log/nginx:/config/log/freshrss:ro"
    ```
 5. Recreate the SWAG container by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
-6. [Verify](https://github.com/austozi/selfhosted/wiki/Verify-fail2ban-is-working) that fail2ban is working for FreshRSS. 
+6. [Verify](https://github.com/austozi/selfhosted/wiki/Verify-fail2ban-is-working) that fail2ban is working for this application.
