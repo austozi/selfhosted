@@ -1,6 +1,6 @@
 # File Browser
 
-[File Browser](https://github.com/filebrowser/filebrowser) is a web-based file browser that allows a user to interact with files on the server.
+[File Browser](https://github.com/filebrowser/filebrowser) is a web-based file browser that allows a user to interact with the file system on the server.
 
 ## Install
 
