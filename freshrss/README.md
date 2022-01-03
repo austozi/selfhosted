@@ -51,4 +51,4 @@ The following steps are designed to be used with a SWAG container as the reverse
    volumes:
      - "/path/to/freshrss/config/log/nginx:/config/log/freshrss:ro"
    ```
-5. Recreate the SWAG container to take effect by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
+5. Recreate the SWAG container by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
