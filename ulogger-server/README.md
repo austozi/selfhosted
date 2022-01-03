@@ -21,7 +21,7 @@ The application will need to be configured manually, as the initialisation scrip
 
 1. Navigate to the application in the browser (e.g. https://ulogger.example.com) and follow the instructions to set up the admin account.
 2. Disable manual configuration in the docker-compose.yml file, by changing `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0`.
-3. Recreate the container by executing, the same directory where the docker-compose.yml file is located, `docker-compose up -d`.
+3. Recreate the container by executing, in the same directory where the docker-compose.yml file is located, `docker-compose up -d`.
 
 ## Known issues
 
