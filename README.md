@@ -18,7 +18,7 @@ Some guiding principles:
 | BookStack          | Username & Password    | TOTP |            | Yes      |
 | Calibre-Web        | Username & Password    |      | Yes        | Yes      |
 | changedetection.io | Password only          |      |            |          |
-| File Browser       | Username & Password    |      |            |          |
+| File Browser       | Username & Password    |      |            | Yes      |
 | Firefly III        | Username & Password    | TOTP |            |          |
 | FreshRSS           | Username & Password    |      | Yes        | Yes      |
 | Gotify             | Username & Password    |      | Yes        |          |
