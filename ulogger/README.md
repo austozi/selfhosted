@@ -1,3 +1,21 @@
+# μlogger
+
+[μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. This is the server component. An [Android client](https://github.com/bfabiszewski/ulogger-android) is available.
+
+##Build
+
+The build.sh script is used to dockerise the application, since an official Docker image for the armhf architecture is unavailable. The script will download the specified release of the source code from upstream and build the image for use with an SQLite database. It will then delete the source files after the build, and push the newly built image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
+
+1. Download the build.sh script.
+2. Make build.sh executable by executing `chmod +x ./build.sh` in the directory where it is located.
+3. Execute the script in the same directory: `./build.sh`.
+
+## Install
+
+1. Download the docker-compose.yml file to the Docker host.
+2. If reinstalling over an existing instance, change `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0` in the docker-compose.yml file to reuse the existing configurations.
+3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
+
 ### Create admin account
 
 The application will need to be configured manually, as the initialisation script in the current Docker build has [a bug](https://github.com/bfabiszewski/ulogger-server/pull/137) that prevents the SQLite database from being configured programmatically. Manual configuration circumvents that bug. This only needs to be done once.
