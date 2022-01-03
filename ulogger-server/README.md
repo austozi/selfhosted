@@ -4,13 +4,11 @@
 
 ## Build
 
-The build.sh script is used to dockerise the application, since an official Docker image for the armhf architecture is unavailable.
+The build.sh script is used to dockerise the application, since an official Docker image for the armhf architecture is unavailable. The script will download the specified release of the source code from upstream and build the image for use with an SQLite database. It will then delete the source files after the build, and push the newly built image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
 
 1. Download the build.sh script.
 2. Make build.sh executable by executing `chmod +x ./build.sh` in the directory where it is located. 
 3. Execute the script in the same directory: `./build.sh`.
-
-The script will download the specified release of the source code from upstream and build the image for use with an SQLite database. It will then delete the source files after the build, and push the newly built image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
 
 ## Install
 
