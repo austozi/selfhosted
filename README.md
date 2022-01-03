@@ -3,7 +3,13 @@ Resources relating to selfhosted services.
 
 ## Security
 
-The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary. Enforce two-factor authentication (2FA) for any application that offers it. For any that do not, implement HTTP basic authentication as an additional security layer if it is to be made available on the public internet. However, be aware that HTTP basic authentication will break most the mobile apps that need access to the public API.
+The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary. 
+
+Some guiding principles:
+
+1. Enforce two-factor authentication (2FA) for any application that offers it. 
+2. For any that do not offer 2FA, implement HTTP basic authentication at the reverse proxy level as an additional security layer if it is to be made available on the public internet. However, be aware that HTTP basic authentication will break most the mobile apps that need access to the public API.
+3. Configure fail2ban for all applications, wherever possible.
 
 | Application        | Primary authentication | 2FA  | Mobile app | fail2ban |
 |--------------------|------------------------|------|------------|----------|
