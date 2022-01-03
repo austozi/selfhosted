@@ -16,6 +16,8 @@ The build.sh script is used to dockerise the application, since an official Dock
 2. If reinstalling over an existing instance, change `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0` in the docker-compose.yml file to reuse the existing configurations.
 3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
 
+## Configure
+
 ### Create admin account
 
 The application will need to be configured manually, as the initialisation script in the current Docker build has [a bug](https://github.com/bfabiszewski/ulogger-server/pull/137) that prevents the SQLite database from being configured programmatically. Manual configuration circumvents that bug. This only needs to be done once.
