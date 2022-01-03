@@ -11,7 +11,7 @@ This application needs to be able to reach the Grocy instance, either via the pu
 
 :information_source: The docker-compose.yml file specifies the ARM image by default. Adjust the image tag accordingly for other architectures.
 
-## Configuration
+## Configure
 
 ### User accounts
 
