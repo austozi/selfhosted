@@ -1,25 +1,22 @@
----
 version: "3"
 services:
   filebrowser:
-    image: filebrowser/filebrowser:latest
-    container_name: filebrowser
-    restart: unless-stopped
-    command: >
-      --config=/config/app/filebrowser.json --database=/config/db/database.db --address=0.0.0.0 --port=8080 --log=/config/log/filebrowser.log
+    image: "filebrowser/filebrowser:latest"
+    container_name: "filebrowser"
+    restart: "unless-stopped"
+    command: "--config=/config/app/filebrowser.json --database=/config/db/database.db --address=0.0.0.0 --port=8080 --log=/config/log/filebrowser.log"
     healthcheck:
-      test: curl -f http://localhost:8080/health || exit 1
+      test: "curl -f http://localhost:8080/health || exit 1"
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
-      - ./config:/config
-      - ./config/files:/files
+      - "./config:/config"
+      - "./files:/files:ro"
     expose:
       - 8080
+    networks:
+      - "proxy"
 networks:
-  default:
-    driver: bridge
+  proxy:
+    driver: "bridge"
     ipam:
-      driver: default
       config:
-      - subnet: 172.16.29.0/27
+        - subnet: "172.16.21.0/29"
