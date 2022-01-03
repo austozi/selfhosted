@@ -15,7 +15,7 @@ This application needs to be able to reach the Grocy instance, either via the pu
 
 ### User accounts
 
-This application needs to be configured manually on first use. To configure the instance, navigate to the application in the web browser (e.g. https://barcodebuddy.example.com) and follow the on-screen instructions to set up a user account and communication with Grocy. This only needs to be done once.
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://barcodebuddy.example.com) and follow the on-screen instructions to set up a user account and enable the application to communicate with Grocy. This only needs to be done once.
 
 :information_source: **Notes**:
 
