@@ -37,10 +37,10 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
 3. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
     ```
     [jellyfin]
-    enabled  = true
-    port     = http,https
-    filter   = jellyfin
-    logpath  = /config/log/jellyfin/*.log
+    enabled = true
+    port    = http,https
+    filter  = jellyfin
+    logpath = /config/log/jellyfin/*.log
     ```
 4. Mount this application's log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
    ```
