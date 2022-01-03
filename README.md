@@ -14,7 +14,7 @@ Some guiding principles:
 
 | Application        | Primary authentication | 2FA  | Mobile app | fail2ban |
 |--------------------|------------------------|------|------------|----------|
-| Barcode Buddy      | Username & Password    |      | Yes        |          |
+| Barcode Buddy      | Username & Password    |      | Yes        | Yes      |
 | BookStack          | Username & Password    | TOTP |            | Yes      |
 | Calibre-Web        | Username & Password    |      | Yes        | Yes      |
 | changedetection.io | Password only          |      |            |          |
