@@ -28,7 +28,7 @@ These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fa
 
 1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
 2. Append the [relevant jail](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/jail.local) to /path/to/swag/config/fail2ban/jail.local on the Docker host.
-3. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG.
+3. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG:
     ```
     volumes:
       - "../barcodebuddy/config/log/nginx:/config/log/barcodebuddy:ro"
