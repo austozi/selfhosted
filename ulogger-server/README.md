@@ -13,13 +13,14 @@ The script will download the specified release of the source code from upstream 
 ## Install
 
 1. Download the docker-compose.yml file to the Docker host.
-2. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
+2. If reusing an existing SQLite database, change `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0` in the docker-compose.yml file.
+3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
 
 ## Configure
 
 ### Create admin account
 
-The application will need to be configured manually, as the initialisation script in the current Docker build has [a bug](https://github.com/bfabiszewski/ulogger-server/pull/137) that prevents the SQLite database from being configured programmatically. Manual configuration circumvents that bug.
+The application will need to be configured manually, as the initialisation script in the current Docker build has [a bug](https://github.com/bfabiszewski/ulogger-server/pull/137) that prevents the SQLite database from being configured programmatically. Manual configuration circumvents that bug. This only needs to be done once.
 
 1. Navigate to the application in the browser (e.g. https://ulogger.example.com) and follow the instructions to set up the admin account.
 2. Disable manual configuration in the docker-compose.yml file, by changing `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0`.
