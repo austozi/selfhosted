@@ -21,7 +21,7 @@ At the time of writing, the NGINX instance included in the Docker image logs the
 set_real_ip_from 172.0.0.0/8;
 real_ip_header X-Forwarded-For;
 ```
-This addition is necessary for fail2ban to correctly identify the remote IP and ban it.
+This addition is necessary for fail2ban to correctly identify the remote IP and ban it in case of repeated failed login attempts.
 
 #### Setting up fail2ban
 
