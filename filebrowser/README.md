@@ -13,6 +13,8 @@
 
 This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://filebrowser.example.com) and follow the on-screen instructions to set up a user account. The default account username and password are both **admin**. Be sure to change these upon first successful login.
 
+Also change the default scope for new users. This defines what files the users can see.
+
 ### fail2ban
 
 These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
