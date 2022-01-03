@@ -4,8 +4,18 @@
 
 ## Install
 
-Execute `docker-compose up -d`.
+1. Download the docker-compose.yml file to the Docker host.
+3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
 
-This will install the [Nextcloud server](https://hub.docker.com/r/linuxserver/nextcloud), a dedicated [MariaDB database server](https://hub.docker.com/r/yobasystems/alpine-mariadb) and [Redis](https://hub.docker.com/_/redis), using off-the-shelf images from [Docker Hub](https://hub.docker.com). The Nextcloud server itself is intended to be run behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag). 
+## Configure
 
-It also joins the Docker network for the mail server, to allow Nextcloud to use it for sending e-mail notifications.
+This application needs to be configured manually. This only needs to be done once.
+
+1. Navigate to the application in the browser (e.g. https://nextcloud.example.com) and follow the instructions to set up the admin account.
+2. Be sure to use MySQL as the database rather than SQLite. Use the same values for the nextcloud_db container, as specified in the docker-compose.yml file.
+3. It may be necessary to configure the application further by editing /path/to/nextcloud/config/www/nextcloud/config/config.php.
+
+## Enforce two-factor authentication (2FA)
+
+1. Different 2FA methods are available as add-ons (apps), which can be enabled by the admin user under the Apps menu. Use the time-based one-time password (TOTP) app if unsure. This uses a mobile app to generate a validation code that changes from time to time.
+2. Still as the admin user, under Settings > Administration > Basic settings, tick the box 'Enforce two-factor authentication' and save the change.
