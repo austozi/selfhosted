@@ -1,22 +1,25 @@
 version: "3"
 services:
   ulogger:
-    image: austozi/ulogger-server:latest
-    container_name: ulogger
-    restart: unless-stopped
-    command: sh -c '/init.sh && chown -R nobody:nobody /data && /run.sh'
+    image: "austozi/ulogger-server:latest"
+    container_name: "ulogger"
+    restart: "unless-stopped"
+    entrypoint: "sh -c 'chown -R nobody:nobody /data && /run.sh'"
     environment:
-      - TZ=Europe/London
-      - ULOGGER_ADMIN_USER=admin
-      - ULOGGER_ENABLE_SETUP=0
-      - ULOGGER_DB_DRIVER=sqlite
-      - ULOGGER_LANG=en_GB.utf-8
+      TZ: "Europe/London"
+      ULOGGER_ENABLE_SETUP: 0
+      ULOGGER_DB_DRIVER: "sqlite"
+      ULOGGER_LANG: "en_GB.utf-8"
     volumes:
-      - ./config:/data
+      - "./config/data:/data"
+      - "./config/log:/var/log"
     expose:
       - 80
     networks:
-      - swag_default
+      - "proxy"
 networks:
-  swag_default:
-    external: true
+  proxy:
+    driver: "bridge"
+    ipam:
+      config:
+        - subnet: "172.16.50.0/29"
