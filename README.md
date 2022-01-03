@@ -27,7 +27,7 @@ Some guiding principles:
 | Heimdall           | Password only          |      |            |          |
 | Home Assistant     | Username & Password    | TOTP | Yes        |          |
 | Homer              | -                      |      |            |          |
-| Jellyfin           | Username & Password    |      | Yes        |          |
+| Jellyfin           | Username & Password    |      | Yes        | Yes      |
 | Navidrome          | Username & Password    |      | Yes        | Yes      |
 | Nextcloud          | Username & Password    | TOTP | Yes        | Yes      |
 | Papermerge         | Username & Password    |      |            |          |
