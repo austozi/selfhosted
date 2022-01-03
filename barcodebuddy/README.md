@@ -4,12 +4,12 @@
 
 ## Install
 
+:information_source: The docker-compose.yml file specifies the ARM image by default. Adjust the image tag accordingly for other architectures.
+
 This application needs to be able to reach the Grocy instance, either via the public internet or via an internal network.
 
 1. Download the docker-compose.yml file to the Docker host.
 2. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
-
-:information_source: The docker-compose.yml file specifies the ARM image by default. Adjust the image tag accordingly for other architectures.
 
 ## Configuration
 
