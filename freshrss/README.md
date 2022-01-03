@@ -45,4 +45,4 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
      - "/path/to/freshrss/config/log/nginx:/config/log/freshrss:ro"
    ```
 5. Recreate the SWAG container by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
-6. Verify that fail2ban is working for FreshRSS. 
+6. [Verify](https://github.com/austozi/selfhosted/wiki/Verify-fail2ban-is-working) that fail2ban is working for FreshRSS. 
