@@ -1,14 +1,14 @@
 # μlogger
 
-[μLogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. These files are used to dockerise the server component. The [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available on [F-Droid](https://f-droid.org).
-
-This application is intended to be run behind an NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag).
+[μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. These files are used to dockerise the server component. The [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available on [F-Droid](https://f-droid.org).
 
 ## Build
 
-Make the build.sh script executable `chmod +x build.sh`, then execute it. 
+1. Download the build.sh script.
+2. Make build.sh executable by executing `chmod +x ./build.sh` in the directory where it is located. 
+3. Execute build.sh: `./build.sh`
 
-The script will download the specified release of the source code from upstream, tweak the Dockerfile to disable Docker volume creation in the image, and then build the image for use with an SQLite database. The script will delete the source files after the build, and push the image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
+The script will download the specified release of the source code from upstream and build the image for use with an SQLite database. It will then delete the source files after the build, and push the newly built image to [Docker Hub](https://hub.docker.com/r/austozi/ulogger-server).
 
 ## Install
 
