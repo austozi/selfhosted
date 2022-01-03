@@ -22,7 +22,7 @@ The following table summarises the application features that may help determine 
 | Homer              | -                      | -    | -          |          |
 | Jellyfin           | Username & Password    | -    | Yes        |          |
 | Navidrome          | Username & Password    | -    | Yes        | Yes      |
-| Nextcloud          | Username & Password    | TOTP | Yes        |          |
+| Nextcloud          | Username & Password    | TOTP | Yes        | Yes      |
 | Papermerge         | Username & Password    | -    | -          |          |
 | Pi-hole Dashboard  | Password only          | -    | -          |          |
 | PiGallery 2        | Username & Password    | -    | -          |          |
