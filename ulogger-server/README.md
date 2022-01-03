@@ -52,7 +52,7 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
     filter   = ulogger
     logpath  = /config/log/ulogger/access.log
     ```
-4. Mount FreshRSS's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
+4. Mount this application's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
    ```
    volumes:
      - "/path/to/ulogger/config/log/nginx:/config/log/ulogger:ro"
