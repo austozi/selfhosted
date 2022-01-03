@@ -57,7 +57,7 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
 
 ## Upgrade
 
-1. Update the image version in the docker-compose.yml file manually, by changing the image tag.
+1. Update the image tag in the docker-compose.yml file manually (e.g. by changing `22.2.2` to `23.0.0`).
 2. In the same directory as the docker-compose.yml file, execute `docker-compose up -d`.
 3. On the Docker host, execute `docker exec -it nextcloud updater.phar` and follow the on-screen instructions.
 4. Log on to Nextcloud in the browser as the admin user and navigate to Settings > Overview and perform the Nextcloud self-check and online security scan. Address any issues raised by following the on-screen instructions.
