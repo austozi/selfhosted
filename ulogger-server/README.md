@@ -17,7 +17,7 @@ The script will download the specified release of the source code from upstream 
 
 ## Configure
 
-The application will need to be configured manually, as the initialisation script in the current Docker build has a bug that prevents the database from being set up. Manual configuration circumvents that bug.
+The application will need to be configured manually, as the initialisation script in the current Docker build has [a bug](https://github.com/bfabiszewski/ulogger-server/pull/137) that prevents the database from being set up. Manual configuration circumvents that bug.
 
 1. Navigate to the application in the browser (e.g. https://ulogger.example.com) and follow the instructions to set up the admin account.
 2. Disable manual configuration in the docker-compose.yml file, by changing `ULOGGER_ENABLE_SETUP=1` to `ULOGGER_ENABLE_SETUP=0`.
