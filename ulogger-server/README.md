@@ -1,8 +1,10 @@
 # μlogger
 
-[μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. These files are used to dockerise the server component. An [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available.
+[μlogger](https://github.com/bfabiszewski/ulogger-server) is a real-time geolocation tracking application. An [Android client](https://f-droid.org/en/packages/net.fabiszewski.ulogger/) is available.
 
 ## Build
+
+The build.sh script is used to dockerise the application, since an official Docker image for the armhf architecture is unavailable.
 
 1. Download the build.sh script.
 2. Make build.sh executable by executing `chmod +x ./build.sh` in the directory where it is located. 
