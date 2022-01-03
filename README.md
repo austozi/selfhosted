@@ -10,7 +10,7 @@ Some guiding principles:
 1. Minimise the number of applications exposed to the public internet. Only expose an application if absolutely necessary.
 3. Enforce two-factor authentication (2FA) for any application that offers it. 
 4. For any application that does not offer 2FA, implement HTTP basic authentication at the reverse proxy as an additional security layer if it needs to be made available on the public internet. However, be aware that HTTP basic authentication may break any clients (e.g. mobile apps) that need access to its public API.
-5. Configure fail2ban for all applications, wherever possible.
+5. Enable fail2ban for all applications, wherever possible.
 
 | Application        | Primary authentication | 2FA  | Mobile app | fail2ban |
 |--------------------|------------------------|------|------------|----------|
