@@ -8,7 +8,7 @@ Download the docker-compose.yml to a directory on the Docker host and execute `d
 
 ### Security
 
-Failed login attempted are logged in the NGINX access log at ./config/log/nginx/access.log, in the following format:
+Failed login attempted are logged in the NGINX access log at /path/to/freshrss/config/log/nginx/access.log, in the following format:
 
 ```
 1.2.3.4 - - [03/Jan/2022:14:01:52 +0000] "POST /i/?c=auth&a=login HTTP/1.1" 403 2313 "-" "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0"
