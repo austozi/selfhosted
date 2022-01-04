@@ -37,9 +37,9 @@ Some guiding principles:
 | Portainer          | Username & Password    |      |            |          |
 | pyLoad             | Username & Password    |      |            |          |
 | Roundcube          | Username & Password    | TOTP |            |          |
-| Scrutiny           | -                      |      |            |          |
+| Scrutiny           |                        |      |            |          |
 | SheetAble          | Username & Password    |      |            |          |
-| Snapdrop           | -                      |      | Yes        |          |
+| Snapdrop           |                        |      | Yes        |          |
 | Snipe-IT           | Username & Password    | TOTP |            |          |
 | Syncthing          | Username & Password    |      |            |          |
 | Tandoor            | Username & Password    |      |            |          |
