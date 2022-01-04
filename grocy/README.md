@@ -4,28 +4,30 @@
 
 ## Install
 
-Run `docker-compose up -d`. 
+1. Download the docker-compose.yml file to the Docker host.
+1. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
-This setup uses the [docker.io/linuxserver/grocy](https://hub.docker.com/r/linuxserver/grocy) image with SQLite.
+:information_source: The Android client lags behind the server in version upgrades, so there can be incompatibilities as new server versions are released. To ensure compatibility of the Android client with the server, this setup pins the Docker image to a specific version and therefore requires manual upgrades.
 
-The Android client lags behind the server in version upgrades, so there can be incompatibilities as new server versions are released. To ensure compatibility of the Android client with the server, this setup pins the Docker image to a specific version and therefore requires manual upgrades.
+## Configure
 
-## Security
+### User accounts
 
-Putting Grocy behind HTTP basic authentication will break the functionality of the Android client. If exposing the instance to the public internet, enable fail2ban as follows (using a [SWAG container](https://github.com/linuxserver/docker-swag) for the reverse proxy):
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://grocy.example.com) and follow the on-screen instructions to set up a user account. This only needs to be done once.
 
-1. Copy the grocy.local file to the /path/to/swag/config/fail2ban/filter.d/ directory.
-2. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
-    ```
-    [grocy]
-    enabled  = true
-    port     = http,https
-    filter   = grocy
-    logpath  = /config/log/grocy/access.log
-    ```
-3. Mount the Grocy container's log directory into the SWAG container by adding the following lines to the latter's docker-compose.yml file:
+The username and password for the default administrator's account are both **admin**. Be sure to change these upon first successful login.
+
+### fail2ban
+
+These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
+
+1. Configure the Grocy container to [log the real IP address of the remote client](https://github.com/austozi/selfhosted/wiki/fail2ban#log-remote-ip-address), rather than that of the reverse proxy.
+1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
+1. Append the [relevant jail](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/jail.local) to /path/to/swag/config/fail2ban/jail.local on the Docker host.
+1. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG:
     ```
     volumes:
-      - "/path/to/grocy/config/log/nginx:/config/log/grocy:ro"
+      - "../grocy/config/log/nginx:/config/log/grocy:ro"
     ```
-4. Recreate the SWAG container to take effect.
+1. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
+1. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
