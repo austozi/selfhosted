@@ -11,4 +11,4 @@
 
 ### Global password
 
-This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://changedetectionio.example.com) and follow the on-screen instructions to set up a global password and URLs to monitor for changes.
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://changedetection.example.com) and follow the on-screen instructions to set up a global password and URLs to monitor for changes.
