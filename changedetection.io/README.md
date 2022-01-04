@@ -1,5 +1,14 @@
 # changedetection.io
 
-This application monitors changes on websites and sends a notification when it detects a change. The docker-compose.yml file includes only a small subset of configuration options relevant to my setup. For more details, refer to the [upstream project on GitHub](https://github.com/dgtlmoon/changedetection.io).
+[changedetection.io](https://github.com/dgtlmoon/changedetection.io) is a website change detection, monitoring and notification service.
 
-This is a single-user application. It provides a single layer of authentication based on the password alone (i.e. no username). Once the application has been configured, notifications can be received (e.g. via email, Gotify, Telegram, etc.) without needing access to the application settings. Therefore, it is probably not necessary to expose this application to the public internet, if remote access via a VPN is feasible. However, if HTTPS access is needed, the application can be deployed behind a reverse proxy with HTTP basic authentication and fail2ban to thwart brute-force attacks.
+## Install
+
+1. Download the docker-compose.yml file to the Docker host.
+2. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
+
+## Configure
+
+### Global password
+
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://changedetectionio.example.com) and follow the on-screen instructions to set up a global password and URLs to monitor for changes.
