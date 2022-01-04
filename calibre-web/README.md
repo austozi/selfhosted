@@ -1,28 +1,30 @@
 # Calibre-Web
 
-[Calibre-Web](https://github.com/janeczku/calibre-web) is an e-book management application.
+[Calibre-Web](https://github.com/janeczku/calibre-web) is a web-based ebook catalogue.
 
 ## Install
 
-Run `docker-compose up -d -f`. 
+1. Download the docker-compose.yml file to the Docker host.
+2. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
-## Security
+## Configure
 
-Calibre-Web offers the Open Publication Distribution System (OPDS), which some ebook readers (e.g. mobile apps) use to access the ebook catalogue. Putting Calibre-Web behind a reverse proxy like NGINX with HTTP basic authentication will break this functionality, unless an exception is made to allow public connection to the /opds directory on the Calibre-Web instance. In that case, fail2ban can be used mitigate the risk of unauthorised access.
+### User accounts
 
-To set up fail2ban with the [SWAG container](https://github.com/linuxserver/docker-swag) as the reverse proxy, copy calibre-web.local to /path/to/swag/config/fail2ban/filter.d/ and add the following line to /path/to/swag/config/fail2ban/jail.local:
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://calibre-web.example.com) and follow the on-screen instructions to set up a user account. This only needs to be done once.
 
-```
-[calibre-web]
-enabled  = true
-port     = http,https
-filter   = calibre-web
-logpath  = /config/log/calibre-web/calibre-web.log
-```
-Then mount Calibre-Web's log file into the SWAG container in the latter's docker-compose.yml file:
+See [here](https://github.com/linuxserver/docker-calibre-web) for instructions.
 
-```
-volumes:
-  - "/path/to/calibre-web/config/calibre-web.log:/config/log/calibre-web/calibre-web.log:ro"
-```
-Recreate the SWAG container to take effect.
+### fail2ban
+
+These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
+
+1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
+2. Append the [relevant jail](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/jail.local) to /path/to/swag/config/fail2ban/jail.local on the Docker host.
+3. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG:
+    ```
+    volumes:
+      - "../calibre-web/config/log/nginx:/config/log/calibre-web:ro"
+    ```
+5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
+6. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
