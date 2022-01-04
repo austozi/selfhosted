@@ -1,22 +1,22 @@
----
 version: "3"
 services:
   homer:
-    image: docker.io/b4bz/homer:latest
-    container_name: homer
-    restart: unless-stopped
+    image: "b4bz/homer:latest"
+    container_name: "homer"
+    restart: "unless-stopped"
     environment:
-      - UID=1000
-      - GID=1000
-      - TZ=Europe/London
+      UID: 1000
+      GID: 1000
+      TZ: "Europe/London"
     volumes:
-      - ./config:/www/assets
+      - "./config:/www/assets"
     expose:
       - 8080
+    networks:
+      - "proxy"
 networks:
-  default:
-    driver: bridge
+  proxy:
+    driver: "bridge"
     ipam:
-      driver: default
       config:
-      - subnet: 172.16.8.0/27
+        - subnet: "172.16.8.0/29"
