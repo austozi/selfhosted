@@ -24,7 +24,7 @@ These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fa
 3. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG:
     ```
     volumes:
-      - "../calibre-web/config/log/nginx:/config/log/calibre-web:ro"
+      - "../calibre-web/config/calibre-web.log:/config/log/calibre-web/calibre-web.log:ro"
     ```
 5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
 6. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
