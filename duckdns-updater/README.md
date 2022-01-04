@@ -1,4 +1,4 @@
-# duckdns-updater
+# DuckDNS Updater
 
 A script to update dynamic IP for duckdns.org domains. This script has been written specifically to workw with my own network setup, and may not work with other setups without some tweakng.
 
