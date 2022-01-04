@@ -1,8 +1,0 @@
-# /path/to/swag/config/fail2ban/filter.d/grocy.local
-
-[INCLUDES]
-before = common.conf
-
-[Definition]
-failregex = ^<ADDR>.+/login\?invalid=true.+$
-ignoreregex =
