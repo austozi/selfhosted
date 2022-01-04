@@ -1,6 +1,6 @@
 # DuckDNS
 
-[DuckDNS](https://duckdns.org) is a free dynamic DNS provider. This docker container will periodically update dynamic IP the address associated with the specified DuckDNS domain, so that the domain name always points to the latest IP address.
+[DuckDNS](https://duckdns.org) is a free dynamic DNS provider. This docker container will periodically update the dynamic IP address associated with the specified DuckDNS domain, so that the domain name always points to the latest IP address.
 
 ## Install
 
