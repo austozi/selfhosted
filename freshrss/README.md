@@ -4,45 +4,25 @@
 
 ## Install
 
-1. Download the docker-compose.yml to a directory on the Docker host.
-2. Execute `docker-compose up -d` in the same directory.
+1. Download the docker-compose.yml file to the Docker host.
+2. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
 ## Configure
 
-### Create admin account
+### User accounts
 
-1. Navigate to the application in the browser (e.g. https://freshrss.example.com). 
-2. If installing a new instance, follow the instructions to set up the admin account.
-3. If installing over an existing instance, the container will reuse the existing configurations.
+This application needs to be configured manually on first use. To do so, navigate to the instance in the web browser (e.g. https://freshrss.example.com) and follow the on-screen instructions to set up a user account. This only needs to be done once.
 
-### Set up fail2ban
+### fail2ban
 
-The following steps will configure fail2ban in a SWAG container as the reverse proxy.
+These steps will set up [fail2ban](https://github.com/austozi/selfhosted/wiki/fail2ban) using the [SWAG](https://github.com/austozi/selfhosted/tree/main/swag) container as the reverse proxy.
 
-1. [Configure](https://github.com/austozi/selfhosted/wiki/Make-container-log-remote-IP) the container to log the IP address of the remote client rather than the reverse proxy.
-2. Create a fail2ban filter for FreshRSS at /path/to/swag/config/fail2ban/filter.d/freshrss.local:
+1. Copy [the relevant filter definition](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/filter.d) to the /path/to/swag/config/fail2ban/filter.d/ on the Docker host.
+2. Append the [relevant jail](https://github.com/austozi/selfhosted/tree/main/swag/config/fail2ban/jail.local) to /path/to/swag/config/fail2ban/jail.local on the Docker host.
+3. Mount the relevant log directory into the SWAG container in the docker-compose.yml file for SWAG:
     ```
-    # /path/to/swag/config/fail2ban/filter.d/freshrss.local
-    
-    [INCLUDES]
-    before      = common.conf
-    
-    [Definition]
-    failregex   = ^<ADDR>.+ 403 [0-9]+
-    ignoreregex =
+    volumes:
+      - "../freshrss/config/log/nginx:/config/log/freshrss:ro"
     ```
-3. Append the following lines to /path/to/swag/config/fail2ban/jail.local:
-    ```
-    [freshrss]
-    enabled  = true
-    port     = http,https
-    filter   = freshrss
-    logpath  = /config/log/freshrss/access.log
-    ```
-4. Mount this application's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
-   ```
-   volumes:
-     - "/path/to/freshrss/config/log/nginx:/config/log/freshrss:ro"
-   ```
-5. Recreate the SWAG container by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
-6. [Verify](https://github.com/austozi/selfhosted/wiki/Verify-fail2ban-is-working) that fail2ban is working for this application.
+5. Recreate the SWAG container by running `docker-compose up -d` in the same directory as the [docker-compose.yml](https://github.com/austozi/selfhosted/blob/main/swag/docker-compose.yml) file for SWAG.
+6. [Verify](https://github.com/austozi/selfhosted/wiki/fail2ban) that fail2ban is working for this application.
