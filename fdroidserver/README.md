@@ -22,4 +22,6 @@ docker-compose up -d
 
 ## Configure
 
-To configure the instance,  edit /fdroid/config.yml.
+To configure the instance,  edit /fdroid/config.yml. 
+
+For details and an example, see [here](https://gitlab.com/fdroid/fdroidserver/blob/2.0.3/examples/config.yml).
