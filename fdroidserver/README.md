@@ -19,3 +19,7 @@ Execute the following in the same directory as docker-compose.yml:
 ```
 docker-compose up -d
 ```
+
+## Configure
+
+To configure the instance,  edit /fdroid/config.yml.
