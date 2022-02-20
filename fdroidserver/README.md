@@ -25,3 +25,5 @@ docker-compose up -d
 To configure the instance,  edit ./config/www/fdroid/config.yml. 
 
 For details and an example, see [here](https://gitlab.com/fdroid/fdroidserver/blob/2.0.3/examples/config.yml).
+
+To serve the repo behind [SWAG](https://github.com/linuxserver/docker-swag) as the reverse proxy, copy fdroid.subdomain.conf to /path/to/swag/config/nginx/proxy-conf/ and restart the SWAG container.
