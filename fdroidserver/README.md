@@ -34,7 +34,7 @@ The first time you run the container, deloy the repo by executing on the host:
 docker exec -it fdroid fdroid deploy -v
 ```
 
-Then, add your APK files to ./config/www/fdroid/repo and execute the following to update the index:
+Every time you add new APK files to ./config/www/fdroid/repo, execute the following to update the index:
 
 ```
 docker exec -it fdroid fdroid update -c
