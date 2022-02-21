@@ -14,7 +14,7 @@ docker build -t austozi/fdroidserver:latest .
 
 ## Install
 
-Execute the following in the same directory as docker-compose.yml:
+Download docker-compose.yml and execute in the same directory:
 
 ```
 docker-compose up -d
