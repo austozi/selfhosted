@@ -4,9 +4,7 @@
 
 ## Build
 
-This image makes use of the `fdroidserver` package maintained by the [Debian project](https://www.debian.org), mainly because I have been unsuccessful at building it from [source](https://gitlab.com/fdroid/docker-executable-fdroidserver) or using [the Python installer](https://pypi.org/project/fdroidserver/).
-
-To build the image, execute the following in the same directory as Dockerfile:
+This image makes use of the `fdroidserver` package maintained by the [Debian project](https://www.debian.org). It includes the Apache web server which listens on port 80.
 
 ```
 docker build -t austozi/fdroidserver:latest .
