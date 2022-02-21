@@ -1,21 +1,7 @@
 version: "3"
 services:
-  fdroidserver:
+  fdroid:
     image: docker.io/austozi/fdroidserver:latest
-    container_name: fdroidserver
-    restart: unless-stopped
-    command: >
-      sh -c 'fdroid update -c'
-    environment:
-      PUID: 1000
-      GUID: 1000
-      TZ: Europe/London
-    volumes:
-      - ./config/www/fdroid:/fdroid
-    networks:
-      - backend
-  web:
-    image: docker.io/linuxserver/nginx:latest
     container_name: fdroid
     restart: unless-stopped
     environment:
@@ -23,20 +9,13 @@ services:
       GUID: 1000
       TZ: Europe/London
     volumes:
-      - ./config:/config
-    depends_on:
-      - fdroidserver
+      - ./config/www:/var/www/html
+      - ./config/log:/var/log/apache2
     expose:
       - 80
     networks:
       - proxy
-      - backend
 networks:
-  backend:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.16.48.0/29
   proxy:
     driver: bridge
     ipam:
