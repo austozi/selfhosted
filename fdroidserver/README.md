@@ -6,6 +6,8 @@
 
 This image makes use of the `fdroidserver` package maintained by the [Debian project](https://www.debian.org). It includes the Apache web server which listens on port 80.
 
+To build the image, execute on the host:
+
 ```
 docker build -t austozi/fdroidserver:latest .
 ```
