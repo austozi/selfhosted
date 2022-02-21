@@ -28,7 +28,7 @@ For details and an example, see [here](https://gitlab.com/fdroid/fdroidserver/bl
 
 To serve the repo behind [SWAG](https://github.com/linuxserver/docker-swag) as the reverse proxy, copy fdroid.subdomain.conf to /path/to/swag/config/nginx/proxy-conf/ and restart the SWAG container.
 
-The first time you run the container, deloy the repo by executing the following on the host:
+The first time you run the container, deloy the repo by executing on the host:
 
 ```
 docker exec -it fdroid fdroid deploy -v
