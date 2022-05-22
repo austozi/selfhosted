@@ -11,4 +11,4 @@
 
 Upon creation of the Docker container, set up the administrator account at http://docker-host-ip:3000.
 
-This setup uses a MacVLAN network. Each container in this network is assigned its own unique IP address on the same physical network as the Docker host. This allows multiple containers with using the same port to co-exist on the same Docker host. For example, a Pi-hole or a second AdGuard Home instance can be set up on the same Docker host, all using port 53 for DNS queries.
+This setup uses a MacVLAN network. In this setup, each container is assigned its own unique IP address on the same physical network as the Docker host. This allows multiple containers using the same port to co-exist on the same Docker host. For example, a Pi-hole or a second AdGuard Home instance can be set up on the same Docker host, all using port 53 for DNS queries.
