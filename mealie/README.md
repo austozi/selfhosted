@@ -1,3 +1,5 @@
+![Mealie](https://github.com/austozi/selfhosted/raw/main/mealie/mealie.svg)
+
 # Mealie
 
 [Mealie](https://www.github.com/hay-kot/mealie) is a recipe manager. 
