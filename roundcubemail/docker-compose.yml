@@ -1,35 +1,27 @@
 version: "3"
 services:
   roundcube:
-    image: "austozi/roundcubemail:latest"
-    container_name: "roundcube"
-    restart: "unless-stopped"
+    image: docker.io/austozi/roundcubemail:latest
+    container_name: roundcube
+    restart: unless-stopped
     environment:
-      TZ: "Europe/London"
-      ROUNDCUBEMAIL_DEFAULT_HOST: "mail.example.com"
-      ROUNDCUBEMAIL_SMTP_SERVER: "smtp.example.com"
-      ROUNDCUBEMAIL_DEFAULT_PORT: 143
-      ROUNDCUBEMAIL_SMTP_PORT: 25
-      ROUNDCUBEMAIL_PLUGINS: "archive,zipdownload,twofactor_gauthenticator,fail2ban"
-      ROUNDCUBEMAIL_SKIN: "elastic"
-      ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE: "10M"
-      ROUNDCUBEMAIL_DB_TYPE: "sqlite"
+      TZ: Europe/London
+      ROUNDCUBEMAIL_DEFAULT_HOST: mail.example.com
+      ROUNDCUBEMAIL_SMTP_SERVER: smtp.example.com
+      ROUNDCUBEMAIL_DEFAULT_PORT: 993
+      ROUNDCUBEMAIL_SMTP_PORT: 587
+      ROUNDCUBEMAIL_PLUGINS: archive,zipdownload,twofactor_gauthenticator,fail2ban
+      ROUNDCUBEMAIL_SKIN: elastic
+      ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE: 10M
+      ROUNDCUBEMAIL_DB_TYPE: sqlite
     volumes:
-      - "./config/db:/var/roundcube/db"
-      - "./config/www:/var/www/html"
+      - ./config/db:/var/roundcube/db
+      - ./config/www:/var/www/html
     expose:
       - 80
-    networks:    
-      - "proxy"
-      - "mailer"
 networks:
-  proxy:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-      - subnet: "172.16.38.0/27"
-  mailer:
-    driver: "bridge"
-    ipam:
-      config:
-      - subnet: "172.16.39.0/27"
+        - subnet: 172.16.32.0/29
