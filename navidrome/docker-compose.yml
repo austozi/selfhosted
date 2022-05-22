@@ -1,25 +1,24 @@
 version: "3"
 services:
   navidrome:
-    image: "deluan/navidrome:latest"
-    container_name: "navidrome"
-    restart: "unless-stopped"
+    image: docker.io/deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
     user: "1000:1000"
+    # This line is needed to write the log file to disk for fail2ban to work:
     entrypoint: "sh -c '/app/navidrome 2>&1 | tee /data/navidrome.log'"
     environment:
       # Full configuration options here:
       # https://www.navidrome.org/docs/usage/configuration-options/
-      ND_UILOGINBACKGROUNDURL: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg"
+      ND_UILOGINBACKGROUNDURL: https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg
     volumes:
-      - "./config:/data"
-      - "./music:/music:ro"
+      - ./config:/data
+      - /path/to/music/folder:/music:ro
     expose:
       - 4533
-    networks:
-      - "proxy"
 networks:
-  proxy:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-        - subnet: "172.16.30.0/29"
+        - subnet: 172.16.25.0/29
