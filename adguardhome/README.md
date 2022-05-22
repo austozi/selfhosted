@@ -2,7 +2,7 @@
 
 # AdGuard Home
 
-[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) is a network-level ad-blocker, domain name server (DNS) and dynamic host configuration protocol (DHC)P server.
+[AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) is a network-level ad-blocker, domain name server (DNS) and dynamic host configuration protocol (DHCP) server.
 
 ## Install
 
