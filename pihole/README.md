@@ -12,4 +12,4 @@
 
 ## Configure
 
-This application uses the [official Docker image](https://hub.docker.com/r/pihole/pihole). It is configured to join the Docker network for the NGINX reverse proxy, provided by the [SWAG image](https://github.com/linuxserver/docker-swag), with additional layers of authentication, so that its admin interface can be accessed remotely. Never expose this admin interface directly to the internet or without additional layers of authentication.
+This setup uses a MacVLAN network. In this setup, each container is assigned its own unique IP address on the same physical network as the Docker host. This allows multiple containers using the same port to co-exist on the same Docker host. For example, an AdGuard Home or a second Pi-hole instance can be set up on the same Docker host, all using port 53 for DNS queries, for redundancy.
