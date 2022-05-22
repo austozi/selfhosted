@@ -5,6 +5,7 @@
 ## Install
 
 1. Download the docker-compose.yml file to the Docker host.
+2. Edit docker-compose.yml as necessary.
 3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
 
 ## Configure
