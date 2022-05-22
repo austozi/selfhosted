@@ -16,7 +16,6 @@ By default, the official image does not write log files to disc. The following l
 
 ```
 entrypoint: "sh -c '/app/navidrome 2>&1 | tee /data/navidrome.log'"
-
 ```
 This is needed for fail2ban to work.
 
