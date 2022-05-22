@@ -1,33 +1,24 @@
 version: "3"
 services:
   vaultwarden:
-    image: "vaultwarden/server:latest"
-    container_name: "vaultwarden"
-    restart: "unless-stopped"
+    image: docker.io/vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
     environment:
-      PUID: 1000
-      GUID: 1000
-      TZ: "Europe/London"
+      TZ: Europe/London
       WEBSOCKET_ENABLED: "true"
       SIGNUPS_ALLOWED: "false"
-      ADMIN_TOKEN: "SOME_SECRET_STRING" # Change me
-      LOG_FILE: "/data/log/vaultwarden.log"
-      LOG_LEVEL: "info"
+      SHOW_PASSWORD_HINT: "false"
+      ADMIN_TOKEN: ChangeMe # Change token for accessing admin interface
+      LOG_FILE: /data/log/vaultwarden.log
+      LOG_LEVEL: info
     volumes:
-      - "./config:/data"
+      - ./config:/data
     expose: 
       - 80
-    networks:
-      - "mailer"
-      - "proxy"
 networks:
-  mailer:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-        - subnet: "172.16.6.0/29"
-  proxy:
-    driver: "bridge"
-    ipam:
-      config:
-        - subnet: "172.16.7.0/29"
+        - subnet: 172.16.40.0/29
