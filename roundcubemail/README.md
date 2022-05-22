@@ -1,3 +1,5 @@
+![Roundcube](https://github.com/austozi/selfhosted/raw/main/roundcubemail/roundcube.svg)
+
 # Roundcubemail
 [Roundcubemail](https://github.com/roundcube/roundcubemail) is a web-based email client.
 
