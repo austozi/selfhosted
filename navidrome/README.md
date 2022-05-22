@@ -1,3 +1,5 @@
+![Navidrome](https://github.com/austozi/selfhosted/raw/main/navidrome/navidrome.svg)
+
 # Navidrome
 
 [Navidrome](https://github.com/navidrome/navidrome) is a music streaming server. It is compatible with various AirSonic-compatible clients, e.g. [Subtracks](https://github.com/austinried/subtracks) on Android.
