@@ -1,4 +1,7 @@
 # Selfhosted
+
+**This repo is intended for my person use and is work in progress. The documentation may be incomplete or inaccurate. Use at your own risk.**
+
 Resources relating to selfhosted services.
 
 ## Security
