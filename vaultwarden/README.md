@@ -4,7 +4,9 @@
 
 ## Install
 
-To deploy the application, do `docker-compose up -d -f docker-compose.yml`.
+1. Download the docker-compose.yml file to the Docker host.
+2. Edit the docker-compose.yml file as necessary.
+3. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
 The mailer network is used to send email notifications using a private email server. If a public email server is used, the mailer network can be safely removed from the docker-compose.yml file.
 
