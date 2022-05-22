@@ -8,8 +8,6 @@
 2. Edit the docker-compose.yml file as necessary.
 3. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
-The mailer network is used to send email notifications using a private email server. If a public email server is used, the mailer network can be safely removed from the docker-compose.yml file.
-
 ## Security
 
 Read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for the hardening guide. The following are adaptations for use with the [SWAG image](https://github.com/linuxserver/docker-swag).
