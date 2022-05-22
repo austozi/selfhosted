@@ -1,7 +1,7 @@
-![Roundcube](https://github.com/austozi/selfhosted/raw/main/roundcubemail/roundcube.svg)
+![Roundcube](https://github.com/austozi/selfhosted/raw/main/roundcube/roundcube.svg)
 
-# Roundcubemail
-[Roundcubemail](https://github.com/roundcube/roundcubemail) is a web-based email client.
+# Roundcube
+[Roundcube](https://github.com/roundcube/roundcubemail) is a web-based email client.
 
 ## Build
 
@@ -9,4 +9,6 @@ Run ./build.sh to build the Docker image based on the latest release, with Apach
 
 ## Install
 
-Edit docker-compose.yml and run `docker-compose up -d` from the same directory.
+1. Download the docker-compose.yml file to the Docker host.
+2. Edit docker-compose.yml as necessary.
+3. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
