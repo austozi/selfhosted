@@ -6,7 +6,7 @@
 
 ## Install
 
-This installation uses [official images from Docker Hub](https://hub.docker.com/r/hkotel/mealie). Since official images are only available for amd64 and arm64 architectures, this installation will only work on compatible Docker hosts. My attempts to build an arm image failed with some error about Poetry, which I was never able to covercome.
+This installation uses [official images from Docker Hub](https://hub.docker.com/r/hkotel/mealie). Since official images are only available for amd64 and arm64 architectures (at the time of writing), this installation will only work on compatible Docker hosts. My attempts to build an arm image failed with some error about Poetry, which I was never able to covercome.
 
 1. Download the docker-compose.yml file to the Docker host.
 2. Execute `docker-compose up -d` in the directory where the docker-compose.yml file is located.
