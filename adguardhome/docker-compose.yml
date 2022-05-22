@@ -1,0 +1,50 @@
+version: "2.1"
+services:
+  adguardhome:
+    image: docker.io/adguard/adguardhome:latest
+    container_name: adguardhome
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    environment:
+      TZ: Europe/London
+    volumes:
+      - ./config/work:/opt/adguardhome/work
+      - ./config/conf:/opt/adguardhome/conf
+    expose:
+      - 53/tcp
+      - 53/udp
+      - 67/udp
+      - 68/udp
+      - 80/tcp
+      - 443/tcp
+      - 443/udp
+      - 3000/tcp
+      - 853/tcp
+      - 784/udp
+      - 853/udp
+      - 8853/udp
+      - 5443/tcp
+      - 5443/udp
+    networks:
+      macvlan0:
+        ipv4_address: 192.168.0.5 # IP address of AdGuard Home container
+      default:
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1 # Cloudflare DNS
+networks:
+  macvlan0:
+    name: macvlan0
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24 # Change IP accordingly depending on LAN setup
+          gateway: 192.168.0.1
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.13.0/29
