@@ -1,29 +1,45 @@
-version: "3"
+version: "2.1"
 services:
   pihole:
-    image: pihole/pihole:latest
+    image: docker.io/pihole/pihole:latest
     container_name: pihole
     restart: unless-stopped
-    ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 67:67/udp
-      - 81:80/tcp
+    expose:
+      - 53/tcp
+      - 53/udp
+      - 67/udp
+      - 80/tcp
     environment:
-      - TZ=Europe/London
-      # Specify own password, or Pi-hole will assign a random one:
-      #- WEBPASSWORD=
-      # Set upstream DNS to Cloudflare:
-      - PIHOLE_DNS=1.1.1.3;1.0.0.3
+      TZ: Europe/London
+      WEBPASSWORD: ChangeMe # Web-based admin interface password
+      PIHOLE_DNS: 1.1.1.3;1.0.0.3 # Cloudflare DNS
+      DNSMASQ_USER: root
+      DNSMASQ_LISTENING: all
+      DHCP_ROUTER: 192.168.0.2 # Router IP
     volumes:
       - ./config/pihole:/etc/pihole
       - ./config/dnsmasq.d:/etc/dnsmasq.d
-    # Recommended but not required (DHCP needs NET_ADMIN)
-    # See https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
       - NET_ADMIN
     networks:
-      - swag_default
+      macvlan0:
+        ipv4_address: 192.168.0.6 # Pi-hole container IP on Docker host network
+      default:
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1 # Cloudflare DNS
 networks:
-  swag_default:
-    external: true
+  macvlan0:
+    name: macvlan0
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 192.168.0.0/24 # Modify local network IP range as appropriate
+          gateway: 192.168.0.1
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.28.0/29
