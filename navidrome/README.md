@@ -30,3 +30,9 @@ To set up fail2ban for this Navidrome container with a [SWAG](https://github.com
       - "/path/to/navidrome/config/navidrome.log:/config/log/navidrome/navidrome.log:ro"
     ```
 4. Recreate the SWAG container to take affect.
+
+By default, the official image does not write log files to disc. The following line is necessary in the docker-compose.yml file to divert the log to disc:
+
+```
+entrypoint: "sh -c '/app/navidrome 2>&1 | tee /data/navidrome.log'"
+```
