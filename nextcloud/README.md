@@ -51,7 +51,7 @@ The following steps will configure fail2ban in a SWAG container as the reverse p
 4. Mount this application's NGINX access log into the SWAG container, by adding the following to the docker-compose.yml file of the latter:
    ```
    volumes:
-     - "/path/to/nextcloud/data/nextcloud.log:/config/log/nextcloud/nextcloud.log:ro"
+     - /path/to/nextcloud/data/nextcloud.log:/config/log/nextcloud/nextcloud.log:ro
    ```
 5. Recreate the SWAG container by executing `docker-compose up -d` in the directory where the docker-compose.yml for SWAG is located.
 6. [Verify](https://github.com/austozi/selfhosted/wiki/Verify-fail2ban-is-working) that fail2ban is working for this application. 
