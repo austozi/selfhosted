@@ -1,3 +1,5 @@
+![AdGuard Home](https://raw.githubusercontent.com/austozi/selfhosted/main/adguardhome/adguardhome.svg)
+
 # AdGuard Home
 
 [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome) is a network ad-blocker and domain name server (DNS).
