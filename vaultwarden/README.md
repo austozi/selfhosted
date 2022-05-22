@@ -35,7 +35,7 @@ Mount the log directory for the Vaultwarden container to the SWAG container, by 
 ```
 volumes:
   # vaultwarden_log_path:swag_log_path
-  - "/path/to/vaultwarden/config/log:/config/log/vaultwarden:ro"
+  - /path/to/vaultwarden/config/log:/config/log/vaultwarden:ro
 ```
 
 Recreate the SWAG container to take effect.
