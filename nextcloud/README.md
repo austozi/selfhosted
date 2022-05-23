@@ -1,3 +1,5 @@
+![Nextcloud](https://github.com/austozi/selfhosted/raw/main/nextcloud/nextcloud.svg)
+
 # Nextcloud
 
 [Nextcloud](https://www.nextcloud.com) is a personal cloud and productivity platform. Its core functionality is for file storage, syncing and sharing. Various add-ons (apps) are available to extend its functionalities.
