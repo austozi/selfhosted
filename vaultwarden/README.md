@@ -1,5 +1,7 @@
 # Vaultwarden
 
+![Vaultwarden](https://raw.githubusercontent.com/austozi/selfhosted/main/vaultwarden/bitwarden.svg)
+
 [Vaultwarden](https://github.com/dani-garcia/vaultwarden) is a [Bitwarden](https://www.bitwarden.com)-compatible password management server. It works with the [official Bitwarden clients](https://bitwarden.com/download/).
 
 ## Install
