@@ -4,9 +4,7 @@
 
 Resources relating to selfhosted services.
 
-## Configuration
-
-### Security
+## Security
 
 The following table summarises the application features that may help determine whether to expose the applications publicly, and measures to harden them if necessary (i.e. whether fail2ban configurations are available). 
 
