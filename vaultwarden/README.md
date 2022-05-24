@@ -10,7 +10,7 @@
 2. Edit the docker-compose.yml file as necessary.
 3. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
-## Security
+## Configuration
 
 Read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for the hardening guide. The following are adaptations for use with the [SWAG image](https://github.com/linuxserver/docker-swag).
 
