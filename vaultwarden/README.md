@@ -43,3 +43,7 @@ volumes:
 ```
 
 Recreate the SWAG container to take effect.
+
+### Bitwarden clients
+
+[Bitwarden clients] are available for multiple platforms. Before connecting to the Vaultwarden instance, configure the server URL in the client to point to the Vaultwarden instance.
