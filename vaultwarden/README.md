@@ -12,6 +12,8 @@
 
 ## Configuration
 
+### Security
+
 Read the [Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki) for the hardening guide. The following are adaptations for use with the [SWAG image](https://github.com/linuxserver/docker-swag).
 
 Copy the *.local files to /path/to/swag/config/fail2ban/filter.d/.
