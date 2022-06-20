@@ -8,10 +8,10 @@ projectPath="/path/to/nextcloud/"
 logFile="$projectPath/cron/update.log"
 
 # Update Nextcloud core application
-docker exec -u abc -it nextcloud php /config/www/nextcloud/updater/updater.phar --no-interaction
+docker exec -u abc -it nextcloud php /config/www/nextcloud/updater/updater.phar --no-interaction >> $logFile
 
 # Update database
-docker exec -u abc -it nextcloud /config/www/nextcloud/occ db:add-missing-indices --no-interaction
+docker exec -u abc -it nextcloud /config/www/nextcloud/occ db:add-missing-indices --no-interaction >> $logFile
 
 # Update Nextcloud apps
-docker exec -u abc -it nextcloud /config/www/nextcloud/occ app:update --all --no-interaction
+docker exec -u abc -it nextcloud /config/www/nextcloud/occ app:update --all --no-interaction >> $logFile
