@@ -1,0 +1,27 @@
+version: "3.5"
+services:
+  scrutiny:
+    image: ghcr.io/analogj/scrutiny:master-omnibus
+    container_name: scrutiny
+    restart: unless-stopped
+    cap_add:
+      - SYS_RAWIO
+    expose:
+      - 8080 # webapp
+      - 8086 # influxDB admin
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /run/udev:/run/udev:ro
+      - ./config/scrutiny:/opt/scrutiny/config
+      - ./config/influxdb:/opt/scrutiny/influxdb
+    devices:
+      - /dev/sda
+      - /dev/sdb
+      - /dev/sdc
+      - /dev/sdd
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.33.0/29
