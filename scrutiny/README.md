@@ -13,4 +13,4 @@ A configuration folder will be created in the same directory as docker-compose.y
 
 ## Security
 
-The application does not provide user authentication. Expose the application via a reverse proxy and implement HTTP basic authentication at the reverse proxy and enable fail2ban rules.
+This application does not provide user authentication. Expose it only via a reverse proxy and implement HTTP basic authentication at the reverse proxy and enable fail2ban rules.
