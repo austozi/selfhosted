@@ -4,7 +4,7 @@
 
 ## Install
 
-This installation requires [Docker](https://docs.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
+This installation uses the Docker container images released by upstream. It requires [Docker](https://docs.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
 
 1. Download docker-compose.yml to your server.
 2. Navigate to the folder where docker-compose.yml is and run `docker-compose up -d` in ther terminal.
