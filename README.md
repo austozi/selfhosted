@@ -31,6 +31,7 @@ Some guiding principles:
 | Home Assistant     | Username & Password    | TOTP | Yes        |          |                |
 | Homer              |                        |      |            |          |                |
 | Jellyfin           | Username & Password    |      | Yes        | Yes      |                |
+| Linkding           | Username & Password    |      |            |          | 172.16.16.0/29 |
 | Navidrome          | Username & Password    |      | Yes        | Yes      |                |
 | Nextcloud          | Username & Password    | TOTP | Yes        | Yes      |                |
 | Papermerge         | Username & Password    |      |            |          |                |
