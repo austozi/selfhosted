@@ -40,7 +40,7 @@ Some guiding principles:
 | Portainer          | Username & Password    |      |            |          |                |
 | pyLoad             | Username & Password    |      |            |          |                |
 | Roundcube          | Username & Password    | TOTP |            |          |                |
-| Scrutiny           |                        |      |            |          | 172.16.33.0/29 |
+| Scrutiny           | HTTP basic auth        | n/a  | n/a        | Yes      | 172.16.33.0/29 |
 | SheetAble          | Username & Password    |      |            |          |                |
 | Snapdrop           |                        |      | Yes        |          |                |
 | Snipe-IT           | Username & Password    | TOTP |            |          |                |
