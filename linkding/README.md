@@ -7,7 +7,7 @@
 This installation uses the Docker container images released by upstream. It requires [Docker](https://docs.docker.com/) and [Docker Compose](https://docs.docker.com/compose).
 
 1. Download docker-compose.yml to the server and edit it to suit the deployment environment.
-2. Navigate to the directory where docker-compose.yml is and run docker-compose up -d in the terminal. A configuration folder will be created in the same directory as docker-compose.yml to persist the application data.
+2. Navigate to the directory where docker-compose.yml is and run `docker-compose up -d` in the terminal. A configuration folder will be created in the same directory as docker-compose.yml to persist the application data.
 3. Create a superuser.
 
     ```
