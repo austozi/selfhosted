@@ -9,4 +9,4 @@ This installation requires [Docker](https://docs.docker.com/) and [Docker Compos
 1. Download docker-compose.yml to your server.
 2. Navigate to the folder where docker-compose.yml is and run `docker-compose up -d` in ther terminal.
 
-A configuration folder will be created in the same directory as docker-compose.yml to persist disk health data.
+A configuration folder will be created in the same directory as docker-compose.yml to persist the application data.
