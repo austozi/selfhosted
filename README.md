@@ -34,6 +34,7 @@ Some guiding principles:
 | Navidrome          | Username & Password    |      | Yes        | Yes      |                |
 | Nextcloud          | Username & Password    | TOTP | Yes        | Yes      |                |
 | Papermerge         | Username & Password    |      |            |          |                |
+| OpenBooks          |                        |      |            |          | 172.16.43.0/29 |
 | Pi-hole Dashboard  | Password only          |      |            |          |                |
 | PiGallery 2        | Username & Password    |      |            |          |                |
 | Planka             | Username & Password    |      |            |          |                |
