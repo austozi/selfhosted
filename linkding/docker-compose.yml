@@ -1,0 +1,23 @@
+version: "3"
+services:
+  linkding:
+    image: docker.io/sissbruecker/linkding:latest
+    container_name: linkding
+    restart: unless-stopped    
+    environment:
+      LD_CONTAINER_NAME: linkding
+      LD_HOST_PORT: 9090
+      LD_HOST_DATA_DIR: ./config
+      LD_DISABLE_BACKGROUND_TASKS: "false"
+      LD_DISABLE_URL_VALIDATION: "false"
+    expose:
+      - 9090
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config:/etc/linkding/data
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.168.19.0/29
