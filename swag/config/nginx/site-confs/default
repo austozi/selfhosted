@@ -1,0 +1,30 @@
+error_page 502 /502.html;
+
+# Reject any HTTP connection attempt not specifying subdomain
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    server_name _;
+    return 444;
+}
+
+# Reject any HTTPS connection attempt not specifying subdomain
+# Serve a self-signed certificate to avoid divulging domain
+server {
+    listen 443 ssl http2 default_server;
+    listen [::]:443 ssl http2 default_server;
+    server_name _;
+    include /config/etc/selfsigned/nginx/selfsigned.conf;
+    return 444;
+}
+
+# If subdomain specified, redirect HTTP traffic to HTTPS
+server {
+    listen 80;
+    server_name *.example.com;
+    return 301 https://$host$request_uri;
+}
+
+# Proxy HTTPS traffic to respective containers
+include /config/nginx/proxy-confs/*.subdomain.conf;
+proxy_cache_path cache/ keys_zone=auth_cache:10m;
