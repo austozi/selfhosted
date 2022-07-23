@@ -1,0 +1,32 @@
+- hosts: localhost
+  become: true
+  tasks:
+  
+  - name: Upgrade system
+    apt:
+      upgrade: dist
+      update_cache: yes
+      autoremove: yes    
+      
+  - name: Install packages
+    package:
+      name:
+        - ansible
+        - docker-compose
+        - git
+        - python3
+      state: latest    
+      
+  - name: Install/Update Python modules
+    pip:
+      name:
+        - pip
+        - yt-dlp
+      state: latest
+      
+  - name: Schedule maintenance
+    cron:
+      name: "Hourly ansible-pull config"
+      job: "ansible-pull -U https://github.com/austozi/selfhosted/RaspberryPiOS/raspi2.yml"
+      minute: "0"
+      user: root
