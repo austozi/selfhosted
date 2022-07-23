@@ -6,6 +6,7 @@
 ######################
 apt-get update
 apt-get -yy dist-upgrade
+apt-get -yy install ansible git
 apt-get -yy autoremove --purge
 apt-get -yy autoclean
 
