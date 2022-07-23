@@ -1,9 +1,9 @@
 #!/bin/bash -e
 # Execute this script as superuser
 
-#########################################
-# Update system and enable ansible-pull #
-#########################################
+######################
+# Update base system #
+######################
 apt-get update
 apt-get -yy dist-upgrade
 apt-get -yy autoremove --purge
