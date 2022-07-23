@@ -1,17 +1,12 @@
 #!/bin/bash -e
 # Execute this script as superuser
 
-######################
-# Get hostname input #
-######################
 hostname=$1
-getHostname() {
-  if [ "$hostname" == "" ]; then
-    read -p "Hostname: " hostname
-    getHostname
-  fi
-}
-getHostname
+if [ "$hostname" == "" ]; then
+  echo "Please specify a hostname: setup.sh <hostname>"
+  exit 1
+fi
+hostnamectl set-hostname $hostname
 
 ######################
 # Update base system #
