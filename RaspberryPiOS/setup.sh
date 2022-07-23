@@ -7,4 +7,4 @@ apt-get -yy dist-upgrade
 apt-get -yy install ansible-pull git
 apt-get -yy autoremove --purge
 apt-get -yy autoclean
-curl -sSL https://get.docker.com | bash
+docker &> /dev/null || curl -sSL https://get.docker.com | bash
