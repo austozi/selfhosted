@@ -21,3 +21,8 @@ apt-get -yy autoclean
 ################################################
 docker --version &> /dev/null || curl -sSL https://get.docker.com | bash
 adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
+
+##########################
+# Install docker-compose #
+##########################
+apt-get -yy install docker-compose
