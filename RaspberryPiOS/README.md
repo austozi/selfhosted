@@ -1,4 +1,4 @@
-# Headless installation
+# Headless Setup
 
 1. Download the Raspberry Pi OS suitable for the hardware from https://www.raspberrypi.com/software and write it to the SD card (e.g. using the Restore Disk Image command in GNOME Disks).
 2. Mount the boot partition of the SD card and and nagivate to it on the command line. 
