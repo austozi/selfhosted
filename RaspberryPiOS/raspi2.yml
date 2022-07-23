@@ -27,6 +27,6 @@
   - name: Schedule maintenance
     cron:
       name: "Hourly ansible-pull config"
-      job: "ansible-pull -U https://github.com/austozi/selfhosted/RaspberryPiOS/raspi2.yml"
+      job: "ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/raspi2.yml"
       minute: "0"
       user: root
