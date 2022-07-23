@@ -1,11 +1,10 @@
 #!/bin/bash -e
 # Execute this script as superuser
 
-hostname=$1
-if [ "$hostname" == "" ]; then
-  echo "Please specify a hostname: setup.sh <hostname>"
-  exit 1
-fi
+################
+# Set hostname #
+################
+read -p "Hostname: " hostname
 hostnamectl set-hostname $hostname
 
 ######################
