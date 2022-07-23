@@ -1,7 +1,7 @@
 #!/bin/bash -e
 # Execute this script as superuser
 apt-get update
-apt-get -y dist-upgrade
-apt-get -y install ansible-pull
-apt-get -y autoremove --purge
-apt-get -y autoclean
+apt-get -yy dist-upgrade
+apt-get -yy install ansible-pull
+apt-get -yy autoremove --purge
+apt-get -yy autoclean
