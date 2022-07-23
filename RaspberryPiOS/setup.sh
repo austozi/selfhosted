@@ -1,17 +1,6 @@
 #!/bin/bash -e
 # Execute this script as superuser
 
-################
-# Set hostname #
-################
-read -p "Hostname: " hostname
-if [ "$hostname" == "" ]; then
-  echo "No hostname specified, aborted."
-  exit 1
-else
-  hostnamectl set-hostname $hostname
-fi
-
 ######################
 # Update base system #
 ######################
@@ -29,4 +18,4 @@ adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
 ########################
 # Hand over to Ansible #
 ########################
-ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/$hostname.yml
+ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/$(hostname).yml
