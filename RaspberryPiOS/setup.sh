@@ -5,7 +5,12 @@
 # Set hostname #
 ################
 read -p "Hostname: " hostname
-hostnamectl set-hostname $hostname
+if [ "$hostname" == "" ]; then
+  echo "No hostname specified, aborted."
+  exit 1
+else
+  hostnamectl set-hostname $hostname
+fi
 
 ######################
 # Update base system #
