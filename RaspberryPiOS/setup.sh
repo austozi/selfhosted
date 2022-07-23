@@ -18,7 +18,7 @@ adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
 ####################
 # Install packages #
 ####################
-packages=(ansible docker-compose git)
+packages=ansible docker-compose git
 for package in $packages; do
   $package --version &> /dev/null || apt-get -yy install $package
 done
