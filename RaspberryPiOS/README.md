@@ -34,7 +34,7 @@ To disable swap, execute on the command line:
 swapoff --all
 ```
 
-Alternatively, a swap file may be created on an external hard disk. For example, if the hard disk is mounted at /media/external, the following script can be executed (as superuser) to enable a swap on that hard disk:
+Alternatively, a swap file may be created on an external hard disk. For example, if the hard disk is mounted at /media/external, the following script can be executed (as superuser) to enable a 8 GB swap file on that hard disk:
 
 ```
 #!/bin/bash -e
