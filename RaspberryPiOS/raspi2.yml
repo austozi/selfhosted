@@ -14,7 +14,7 @@
         - ansible
         - docker-compose
         - git
-        - python3
+        - python3-pip
       state: latest    
       
   - name: Install/Update Python modules
