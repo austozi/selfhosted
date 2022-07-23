@@ -16,3 +16,5 @@ The following procedure will enable the Raspberry Pi as a headless device.
     ```
 4. Insert the SD card into the Raspberry Pi computer and boot from it.
 5. Wait a few seconds, then connect to it from an SSH client.
+6. Set the hostname: `hostnamectl set-hostname <hostname>`.
+7. Run the setup script: `curl -sSL https://raw.githubusercontent.com/austozi/selfhosted/main/RaspberryPiOS/setup.sh | sudo bash`
