@@ -15,10 +15,7 @@ apt-get -yy autoclean
 docker --version &> /dev/null || curl -sSL https://get.docker.com | bash
 adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
 
-####################
-# Install packages #
-####################
-packages=ansible docker-compose git
-for package in $packages; do
-  apt-get -yy install $package
-done
+########################
+# Hand over to Ansible #
+########################
+ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/raspi.yml
