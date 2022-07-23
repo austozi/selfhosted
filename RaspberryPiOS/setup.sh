@@ -4,7 +4,8 @@ read -p "Hostname: " hostname
 hostnamectl set-hostname "$hostname" --static
 apt-get update
 apt-get -yy dist-upgrade
-apt-get -yy install ansible-pull git
+apt-get -yy install ansible git
 apt-get -yy autoremove --purge
 apt-get -yy autoclean
-docker &> /dev/null || curl -sSL https://get.docker.com | bash
+docker --version &> /dev/null || curl -sSL https://get.docker.com | bash
+adduser --uid 1000 docker
