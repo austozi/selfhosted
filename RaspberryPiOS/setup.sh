@@ -18,4 +18,4 @@ adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
 ########################
 # Hand over to Ansible #
 ########################
-ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/raspi.yml
+ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/raspi2.yml
