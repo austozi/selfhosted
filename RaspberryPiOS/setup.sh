@@ -1,12 +1,6 @@
 #!/bin/bash -e
 # Execute this script as superuser
 
-##########################
-# Customise the hostname #
-##########################
-read -p "Hostname: " hostname
-hostnamectl set-hostname "$hostname" --static
-
 #########################################
 # Update system and enable ansible-pull #
 #########################################
