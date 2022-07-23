@@ -20,4 +20,4 @@ apt-get -yy autoclean
 # Install docker and grant default user access #
 ################################################
 docker --version &> /dev/null || curl -sSL https://get.docker.com | bash
-adduser --uid 1000 docker
+adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
