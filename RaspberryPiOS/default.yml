@@ -1,4 +1,4 @@
-- hosts: "*"
+- hosts: all
   become: true
   tasks:
   
