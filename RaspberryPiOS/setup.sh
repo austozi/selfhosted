@@ -2,6 +2,18 @@
 # Execute this script as superuser
 
 ######################
+# Get hostname input #
+######################
+hostname=$1
+getHostname() {
+  if [ "$hostname" == "" ]; then
+    read -p "Hostname: " hostname
+    getHostname
+  fi
+}
+getHostname
+
+######################
 # Update base system #
 ######################
 apt-get update
