@@ -6,7 +6,6 @@
 #########################################
 apt-get update
 apt-get -yy dist-upgrade
-apt-get -yy install ansible git
 apt-get -yy autoremove --purge
 apt-get -yy autoclean
 
@@ -16,7 +15,10 @@ apt-get -yy autoclean
 docker --version &> /dev/null || curl -sSL https://get.docker.com | bash
 adduser `awk -v uid=1000 -F":" '{ if($3==uid){print $1} }' /etc/passwd` docker
 
-##########################
-# Install docker-compose #
-##########################
-apt-get -yy install docker-compose
+####################
+# Install packages #
+####################
+packages=(ansible docker-compose git)
+for package in $packages; do
+  $package --version || apt-get -yy install $package
+done
