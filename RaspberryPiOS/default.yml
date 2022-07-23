@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: "*"
   become: true
   tasks:
   
