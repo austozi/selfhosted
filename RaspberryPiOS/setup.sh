@@ -1,5 +1,7 @@
 #!/bin/bash -e
 # Execute this script as superuser
+read -p "Hostname: " hostname
+hostnamectl set-hostname "$hostname" --static
 apt-get update
 apt-get -yy dist-upgrade
 apt-get -yy install ansible-pull git
