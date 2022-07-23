@@ -12,6 +12,8 @@
     package:
       name:
         - ansible
+        - curl
+        - docker-ce        
         - docker-compose
         - git
         - python3-pip
