@@ -25,3 +25,10 @@
         - pip
         - yt-dlp
       state: latest
+
+  - name: Schedule maintenance
+    cron:
+      name: "Hourly ansible-pull config"
+      job: "ansible-pull -U https://github.com/austozi/selfhosted RaspberryPiOS/default.yml"
+      minute: "0"
+      user: root
