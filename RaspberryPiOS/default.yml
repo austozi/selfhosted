@@ -16,6 +16,7 @@
         - docker-ce        
         - docker-compose
         - git
+        - lastversion
         - python3-pip
       state: latest    
       
