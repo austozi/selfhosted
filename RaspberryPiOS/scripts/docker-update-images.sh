@@ -26,19 +26,19 @@ build_push() {
 	local base_dir=$3 # Base folder within the tarball
 	local build_context=$4 # Docker build context (commonly ".")
 	local build_args=$5 # Docker build arguments (optional)
-	local version=`lastversion "$repo_name"` # Latest upstream release version
+	local version=`lastversion "$repo_name"` # Latest upstream version
 
 	# Create the temporary build folder.
-	# If one already exists, delete and recreate it 
-	# to get rid of outdated files.
+	# If one already exists, delete and recreate it to get rid of
+	# outdated files.
 	# Also create the source subfolder to extract files into.
 	
 	local build_dir=./"build-$appname"
 	rm -rf "$build_dir"
 	mkdir -p "$build_dir"/source
 
-	# Download the source tarball and extract the contents
-	# into the source subfolder in the build folder.
+	# Download the source tarball and extract the contents into the
+	# source subfolder in the build folder.
 	
 	lastversion --download "$build_dir"/source.tar.gz "$repo_name"
 	tar -C "$build_dir"/source -xzf "$build_dir"/source.tar.gz
@@ -83,9 +83,9 @@ build_push \
 # Roundcube
 build_push \
 	roundcubemail \
-  roundcube/roundcubemail-docker \
-  roundcubemail-docker-`lastversion roundcube/roundcubemail` \
-  apache 
+	roundcube/roundcubemail-docker \
+	roundcubemail-docker-`lastversion roundcube/roundcubemail` \
+	apache 
 
 # μLogger
 build_push \
