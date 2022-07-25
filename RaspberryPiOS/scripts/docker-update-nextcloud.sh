@@ -5,7 +5,7 @@
 # ==========================
 # Copyright 2022 austozi.
 # Shell script to update the linuxserver/nextcloud container.
-# Unlike the official container image, this requires that the container be 
+# Unlike the official container image, this requires that the application be 
 # updated from within the running container itself.
 # This script will update the nextcloud application, update database indices,
 # and update any Nextcloud apps (add-ons) installed.
