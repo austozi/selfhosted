@@ -7,8 +7,8 @@
 # Shell script to update the linuxserver/nextcloud container.
 # Unlike the official container image, this requires that the application be 
 # updated from within the running container itself.
-# This script will update the nextcloud application, update database indices,
-# and update any Nextcloud apps (add-ons) installed.
+# This script will update the nextcloud application, database indices and any
+# apps (add-ons) installed.
 # Execute this script on the docker host to run the update.
 # Or, schedule a cronjob to automate it.
 # ##############################################################################
