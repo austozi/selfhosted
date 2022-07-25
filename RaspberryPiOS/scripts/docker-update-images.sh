@@ -21,7 +21,7 @@ build_push() {
 
 	# Fetch/Define parameters.
 
-	local appname=$1 # Name of the application
+	local app_name=$1 # Name of the application
 	local repo_name=$2 # Name of upstream project repo
 	local base_dir=$3 # Base folder within the tarball
 	local build_context=$4 # Docker build context (commonly ".")
@@ -33,7 +33,7 @@ build_push() {
 	# outdated files.
 	# Also create the source subfolder to extract files into.
 	
-	local build_dir=./"build-$appname"
+	local build_dir=./"build-$app_name"
 	rm -rf "$build_dir"
 	mkdir -p "$build_dir"/source
 
@@ -48,15 +48,15 @@ build_push() {
 	# Build and tag the image
 
 	DOCKER_BUILDKIT=1 docker build \
-		-t "$DOCKERHUB_USER/$appname:latest" \
-		-t "$DOCKERHUB_USER/$appname:$version" \
+		-t "$DOCKERHUB_USER/$app_name:latest" \
+		-t "$DOCKERHUB_USER/$app_name:$version" \
 		$build_args \
 		$build_context
 
 	# Push the image to Docker Hub
 	
 	docker login
-	docker push --all-tags "$DOCKERHUB_USER/$appname"
+	docker push --all-tags "$DOCKERHUB_USER/$app_name"
 	
 	# Remove temporary build folder
 	
@@ -67,7 +67,7 @@ build_push() {
 # Call build_push() below for each Docker image to build.
 # Usage:
 #   build_push \
-#     appname \
+#     app_name \
 #     repo_name \
 #     base_dir \
 #     build_context \
