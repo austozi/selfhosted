@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 ################################################################################
-# docker-update-nextcloud.sh
-# ==========================
+# update-nextcloud.sh
+# ===================
 # Copyright 2022 austozi.
 # Shell script to update the linuxserver/nextcloud container.
 # Unlike the official container image, this requires that the application be 
