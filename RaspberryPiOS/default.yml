@@ -23,9 +23,9 @@
   - name: Install/Update Python modules
     pip:
       name:
+        - lastversion
         - pip
         - yt-dlp
-        - lastversion
       state: latest
 
   - name: Schedule maintenance
