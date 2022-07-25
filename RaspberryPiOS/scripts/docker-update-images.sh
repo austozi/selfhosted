@@ -25,7 +25,7 @@ build_push() {
 	local repo_name=$2 # Name of upstream project repo
 	local base_dir=$3 # Base folder within the tarball
 	local build_context=$4 # Docker build context (commonly ".")
-	local build_args=$5	# Docker build arguments (optional)
+	local build_args=$5 # Docker build arguments (optional)
 	local version=`lastversion "$repo_name"` # Latest upstream release version
 
 	# Create the temporary build folder.
