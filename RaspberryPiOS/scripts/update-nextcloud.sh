@@ -13,8 +13,8 @@
 # Or, schedule a cronjob to automate it.
 # ##############################################################################
 
-# Set the name of the Nextcloud container here.
-CONTAINER_NAME=nextcloud # Default container name
+# Default name of the Nextcloud container.
+CONTAINER_NAME=nextcloud
 
 # This script takes a single argument, i.e. $CONTAINER_NAME.
 # If one is passed, then make it $CONTAINER_NAME, overriding the default.
