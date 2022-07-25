@@ -13,8 +13,20 @@
 # Or, schedule a cronjob to automate it.
 # ##############################################################################
 
-CONTAINER_NAME=nextcloud
+# Set the name of the Nextcloud container here.
+CONTAINER_NAME=nextcloud # Default container name
 
+# This script takes a single argument, i.e. $CONTAINER_NAME.
+# If one is passed, then make it $CONTAINER_NAME, overriding the default.
+if [ -n "$1" ]; then
+	CONTAINER_NAME="$1"
+fi
+
+# Update the Nextcloud core application.
 docker exec -u abc -it "$CONTAINER_NAME" php /config/www/nextcloud/updater/updater.phar --no-interaction
+
+# Update database indices.
 docker exec -u abc -it "$CONTAINER_NAME" /config/www/nextcloud/occ db:add-missing-indices --no-interaction
+
+# Update apps (add-ons).
 docker exec -u abc -it "$CONTAINER_NAME" /config/www/nextcloud/occ app:update --all --no-interaction
