@@ -15,7 +15,7 @@ Copy docker-compose.yml to the server and execute `docker-compose up -d`.
 | PODCAST_DESCRIPTION | A description of the show or podcast feed |
 | PODCAST_LINK | URL to the show |
 | PODCAST_IMAGE | Album art for the show or podcast feed |
-| PODCAST_UPDATE_INTERVAL | Interval between feed refreshes |
+| PODCAST_UPDATE_INTERVAL | Interval between feed refreshes, e.g. 30m, 1h, 1d |
 
 ## Usage
 
