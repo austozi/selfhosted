@@ -1,0 +1,26 @@
+version: "2.4"
+services:
+  podcast-server:
+    image: docker.io/austozi/podcast-server:latest
+    container_name: podcast-server
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+      BASE_URL: https://podcasts.example.com
+      PODCAST_TITLE: BBC Sounds Podcasts
+      PODCAST_DESCRIPTION: Award-winning podcasts that hook you in, make you think, or just make you laugh. Subscribe and listen now.
+      PODCAST_IMAGE: https://static.files.bbci.co.uk/sounds/web/sounds-web/img/sounds-apple-touch-icon.ead169771d.png
+      PODCAST_LINK: https://www.bbc.co.uk/sounds
+      PODCAST_UPDATE_INTERVAL: 1h
+    volumes:
+      - ./config:/config
+    ports:
+      - 3330:80
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.35.0/29
