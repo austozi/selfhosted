@@ -12,6 +12,8 @@ To build the image, download Dockerfile and execute from the same directory on t
 docker build -t austozi/fdroidserver:latest .
 ```
 
+Or, edit the file build_push.sh according and execute it. This will build the image, tag it and push it to [Docker Hub](https://hub.docker.com).
+
 ## Install
 
 1. Download the docker-compose.yml file to the Docker host.
