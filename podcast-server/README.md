@@ -27,4 +27,4 @@ Copy docker-compose.yml to the server and execute `docker-compose up -d`.
 
 ### Media sources
 
-Specify the media sources as a list of URLs in the config/urls.txt file (one URL per line). Any URL supported by yt-dlp should work. This the config/urls.txt file does not already exist, the application will create it.
+Specify the media sources as a list of URLs in the config/urls.txt file (one URL per line). Any URL supported by yt-dlp should work. If the config/urls.txt file does not already exist, the application will create it.
