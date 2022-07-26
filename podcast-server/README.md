@@ -1,6 +1,6 @@
 # Podcast Server
 
-Podcast downloader, feed generator and server, dockerised.
+Podcast downloader, feed generator and server, dockerised. [More details here](https://github.com/austozi/docker-podcast-server).
 
 ## Install
 
