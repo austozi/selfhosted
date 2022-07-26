@@ -12,6 +12,7 @@ Copy docker-compose.yml to the server and execute `docker-compose up -d`.
 | ---------| -------- |
 | PUID | UserID of the user to run the container as |
 | PGID | GroupID of the user to run the container as |
+| TZ | Timezone, e.g. Europe/London |
 | BASE_URL | Full URL (e.g. http://podcasts.example.com) pointing to the web root where the feed and media files are served from |
 | PODCAST_TITLE | Title of the show or podcast feed |
 | PODCAST_DESCRIPTION | A description of the show or podcast feed |
