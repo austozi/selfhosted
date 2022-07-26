@@ -40,7 +40,7 @@ docker exec -it fdroid fdroid update -c
 
 This command will generate template metadata files in ./config/www/fdroid/metadata for new APK files. Please edit these manually, then execute the update command above again to update the index.
 
-To schedule index updates, add the following line to ./config/crontabs/root:
+To schedule unatteded index updates, add the following line to ./config/crontabs/root:
 
 ```
 0 * * * * fdroid update -c
