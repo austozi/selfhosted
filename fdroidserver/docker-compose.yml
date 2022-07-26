@@ -4,8 +4,6 @@ services:
     image: docker.io/austozi/fdroidserver:latest
     container_name: fdroid
     restart: unless-stopped
-    command: >
-      sh -c "apachectl -D FOREGROUND & fdroid init || true && fdroid update -c && sleep 1h"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./config/www:/var/www/html
