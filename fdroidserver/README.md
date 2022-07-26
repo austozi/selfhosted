@@ -29,7 +29,7 @@ To serve the repo behind [SWAG](https://github.com/linuxserver/docker-swag) as t
 The first time you run the container, deloy the repo by executing on the host:
 
 ```
-docker exec -it fdroid fdroid deploy -v
+docker exec -it fdroid fdroid init
 ```
 
 Every time you add new APK files to ./config/www/fdroid/repo, execute the following to update the index:
@@ -39,3 +39,10 @@ docker exec -it fdroid fdroid update -c
 ```
 
 This command will generate template metadata files in ./config/www/fdroid/metadata for new APK files. Please edit these manually, then execute the update command above again to update the index.
+
+To schedule index updates, add the following line to ./config/crontabs/root:
+
+```
+0 * * * * fdroid update -c
+```
+This will execute the update every hour. Refer to cron syntax for other update intervals.
