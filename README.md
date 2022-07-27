@@ -21,9 +21,9 @@ Some guiding principles:
 | BookStack          | Username & Password    | TOTP |            | Yes      |          |
 | Calibre-Web        | Username & Password    |      | Yes        | Yes      |          |                |
 | changedetection.io | Password only          |      |            |          | Yes      |                |
-| File Browser       | Username & Password    |      |            | Yes      | Yes      | 172.16.10.0/29 |
+| [File Browser](https://github.com/austozi/selfhosted/tree/main/filebrowser) | Username & Password | | | Yes | Yes | 172.16.10.0/29 |
 | Firefly III        | Username & Password    | TOTP |            |          |          |                |
-| FreshRSS           | Username & Password    |      | Yes        | Yes      |          | 172.16.14.0/29 |
+| [FreshRSS](https://github.com/austozi/selfhosted/tree/main/freshrss) | Username & Password | | Yes | Yes | | 172.16.14.0/29 |
 | Gotify             | Username & Password    |      | Yes        |          |          |                |
 | Grocy              | Username & Password    |      | Yes        | Yes      |          | 172.16.19.0/29 |
 | Hammond            | Username & Password    |      |            |          | Yes      |                |
