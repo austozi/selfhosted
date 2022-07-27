@@ -16,7 +16,7 @@
 
 The application will need to be configured manually. This only needs to be done once.
 
-1. Navigate to the application in the browser (e.g. https://jellyfin.example.com) and follow the instructions to set up the admin account.
+1. Navigate to the application in the browser (e.g. https://jellyfin.example.com or http://localhost:8096) and follow the instructions to set up the admin account.
 2. Recreate the container by executing, in the same directory where the docker-compose.yml file is located, `docker-compose up -d`.
 
 ### Set up fail2ban
