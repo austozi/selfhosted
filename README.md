@@ -30,7 +30,7 @@ Some guiding principles:
 | Heimdall | pass | | | | Yes | |
 | Home Assistant | user:pass | TOTP | Yes | | | |
 | Homer | | | | | Yes | |
-| Jellyfin | user:pass | | Yes | Yes | | 172.16.22.0/29 |
+| [Jellyfin](https://github.com/austozi/selfhosted/tree/main/jellyfin) | user:pass | | Yes | Yes | | 172.16.22.0/29 |
 | Linkding | user:pass | | | | Yes | 172.16.16.0/29 |
 | Navidrome | user:pass | | Yes | Yes | | |
 | Nextcloud | user:pass | TOTP | Yes | Yes | | |
