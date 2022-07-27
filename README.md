@@ -30,7 +30,7 @@ Some guiding principles:
 | Heimdall           | Password only          |      |            |          |                |
 | Home Assistant     | Username & Password    | TOTP | Yes        |          |                |
 | Homer              |                        |      |            |          |                |
-| Jellyfin           | Username & Password    |      | Yes        | Yes      |                |
+| Jellyfin           | Username & Password    |      | Yes        | Yes      | 172.16.22.0/29 |
 | Linkding           | Username & Password    |      |            |          | 172.16.16.0/29 |
 | Navidrome          | Username & Password    |      | Yes        | Yes      |                |
 | Nextcloud          | Username & Password    | TOTP | Yes        | Yes      |                |
