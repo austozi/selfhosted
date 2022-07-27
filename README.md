@@ -21,6 +21,7 @@ Some guiding principles:
 | BookStack | user:pass | TOTP | | Yes | |
 | Calibre-Web | user:pass | | Yes | Yes | | |
 | changedetection.io | pass | | | | Yes | |
+| [F-Droid](https://github.com/austozi/selfhosted/tree/main/fdroid) | | | | | | 172.16.9.0/29 |
 | [File Browser](https://github.com/austozi/selfhosted/tree/main/filebrowser) | user:pass | | | Yes | Yes | 172.16.10.0/29 |
 | Firefly III | user:pass | TOTP | | | | |
 | [FreshRSS](https://github.com/austozi/selfhosted/tree/main/freshrss) | user:pass | | Yes | Yes | | 172.16.14.0/29 |
