@@ -4,11 +4,19 @@ services:
     image: docker.io/austozi/fdroidserver:latest
     container_name: fdroid
     restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+      FDROID_REPO_URL: https://fdroid.example.com/repo # change me
+      FDROID_REPO_NAME: F-Droid Repository
+      FDROID_REPO_ICON: fdroid.svg # In repo/icons/
+      FDROID_REPO_DESCRIPTION: A personal app repository for Android devices.
+      FDROID_UPDATE_INTERVAL: 6h
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./config/www:/var/www/html
-      - ./config/log:/var/log/apache2
-      - ./config/crontabs:/var/spool/cron/crontabs:ro
+      - ./config:/config
+      - ./config/fdroid/repo:/config/www/repo
+      - ./update-scripts:/config/fdroid/update-scripts:ro
     expose:
       - 80
 networks:
