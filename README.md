@@ -39,6 +39,7 @@ Some guiding principles:
 | Pi-hole Dashboard  | Password only          |      |            |          |                |
 | PiGallery 2        | Username & Password    |      |            |          |                |
 | Planka             | Username & Password    |      |            |          |                |
+| Podcast Server     |                        |      |            |          |                |
 | Portainer          | Username & Password    |      |            |          |                |
 | pyLoad             | Username & Password    |      |            |          |                |
 | Roundcube          | Username & Password    | TOTP |            |          |                |
