@@ -1,3 +1,5 @@
+![FreshRSS](https://raw.githubusercontent.com/austozi/selfhosted/main/freshrss/freshrss.svg)
+
 # FreshRSS
 
 [FreshRSS](https://github.com/FreshRSS/FreshRSS) is a news feed aggregator. This is the server component. Various clients are also available.
