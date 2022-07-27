@@ -25,7 +25,7 @@ Some guiding principles:
 | Firefly III        | Username & Password    | TOTP |            |          |          |                |
 | [FreshRSS](https://github.com/austozi/selfhosted/tree/main/freshrss) | Username & Password | | Yes | Yes | | 172.16.14.0/29 |
 | Gotify             | Username & Password    |      | Yes        |          |          |                |
-| [Grocy}(https://github.com/austozi/selfhosted/tree/main/grocy) | Username & Password | | Yes | Yes | | 172.16.19.0/29 |
+| [Grocy](https://github.com/austozi/selfhosted/tree/main/grocy) | Username & Password | | Yes | Yes | | 172.16.19.0/29 |
 | Hammond            | Username & Password    |      |            |          | Yes      |                |
 | Heimdall           | Password only          |      |            |          | Yes      |                |
 | Home Assistant     | Username & Password    | TOTP | Yes        |          |          |                |
