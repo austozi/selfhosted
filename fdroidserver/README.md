@@ -18,7 +18,7 @@ Once the container has been deployed via the usual route (e.g. with `docker run`
 
 Environmental variables can be specified via Docker run parameters or in the docker-compose.yml file.
 
-The repo will auto-update on a customisable time interval. This auto-update can include downloading third-party APKs to the repo. Save the download scripts as .sh files in a folder and mount the folder to /config/fdroid/update-scripts in the container. The download scripts will be executed one by one during the audo-update.
+The repo will auto-update on a customisable time interval. This auto-update can include downloading third-party APKs to the repo. Save the download scripts as .sh files in a folder and mount the folder to /config/fdroid/update-scripts in the container. The download scripts will be executed one by one during the audo-update. Some example download scripts are included in the update-scripts folder here.
 
 To manually trigger an update, execute on the Docker host:
 
