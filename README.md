@@ -23,7 +23,7 @@ Some guiding principles:
 | changedetection.io | Password only          |      |            |          |                |
 | File Browser       | Username & Password    |      |            | Yes      |                |
 | Firefly III        | Username & Password    | TOTP |            |          |                |
-| FreshRSS           | Username & Password    |      | Yes        | Yes      |                |
+| FreshRSS           | Username & Password    |      | Yes        | Yes      | 172.16.14.0/29 |
 | Gotify             | Username & Password    |      | Yes        |          |                |
 | Grocy              | Username & Password    |      | Yes        | Yes      | 172.16.19.0/29 |
 | Hammond            | Username & Password    |      |            |          |                |
