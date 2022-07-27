@@ -1,3 +1,5 @@
+![Grocy](https://raw.githubusercontent.com/austozi/selfhosted/main/grocy/grocy.svg)
+
 # Grocy
 
 [Grocy](https://grocy.info) is a grocery and household management system. This is the server component. An [Android client](https://github.com/patzly/grocy-android) is also available.
