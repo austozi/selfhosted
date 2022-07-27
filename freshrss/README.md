@@ -6,6 +6,8 @@
 
 ## Install
 
+This installation uses the [Docker image from LinuxServer.io](https://hub.docker.com/r/linuxserver/freshrss).
+
 1. Download the docker-compose.yml file to the Docker host.
 2. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
