@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="fressrss.svg"
+   width="64"
+   height="64"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Logo FreshRSS</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     id="namedview20"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.125"
+     inkscape:cx="32"
+     inkscape:cy="32"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg18" />
+  <title
+     id="title2">Logo FreshRSS</title>
+  <circle
+     fill="#0062be"
+     cx="32"
+     cy="32"
+     r="8.25"
+     id="circle4"
+     style="stroke-width:0.25" />
+  <g
+     fill="none"
+     stroke="#0062be"
+     stroke-width="24"
+     id="g16"
+     transform="scale(0.25)">
+    <g
+       stroke-opacity="0.3"
+       id="g10">
+      <path
+         d="M 12,128 A 116,116 0 1 1 128,244"
+         id="path6" />
+      <path
+         d="m 54,128 a 74,74 0 1 1 74,74"
+         id="path8" />
+    </g>
+    <path
+       d="M 128,12 A 116,116 0 0 1 244,128"
+       id="path12" />
+    <path
+       d="m 128,54 a 74,74 0 0 1 74,74"
+       id="path14" />
+  </g>
+</svg>
