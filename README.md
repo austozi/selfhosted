@@ -36,7 +36,7 @@ Some guiding principles:
 | Nextcloud | user:pass | TOTP | Yes | Yes | | |
 | Papermerge | user:pass | | | | Yes | |
 | OpenBooks | | | | | Yes | 172.16.43.0/29 |
-| Pi-hole Dashboard | pass | | | | Yes | |
+| [Pi-hole](https://github.com/austozi/selfhosted/tree/main/pihole) | pass | | | | Yes | 172.16.28.0/29 |
 | PiGallery 2 | user:pass | | | | Yes | |
 | Planka | user:pass | | | | Yes | |
 | Podcast Server | | | | | | |
