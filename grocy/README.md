@@ -7,7 +7,7 @@
 1. Download the docker-compose.yml file to the Docker host.
 1. Execute `docker-compose up -d` from the same directory as the docker-compose.yml file.
 
-:information_source: The Android client lags behind the server in version upgrades, so there can be incompatibilities as new server versions are released. To ensure compatibility of the Android client with the server, this setup pins the Docker image to a specific version and therefore requires manual upgrades.
+:information_source: The mobile client upgrades may lag behind the server, so there can be incompatibilities as new server versions are released. To ensure compatibility of the Android client with the server, this setup pins the Docker image to a specific version and therefore requires manual upgrades.
 
 ## Configure
 
