@@ -1,22 +1,20 @@
-version: "3"
+version: "2.4"
 services:
   filebrowser:
-    image: "filebrowser/filebrowser:latest"
-    container_name: "filebrowser"
-    restart: "unless-stopped"
-    command: "--config=/config/app/filebrowser.json --database=/config/db/database.db --address=0.0.0.0 --port=8080 --log=/config/log/filebrowser.log"
+    image: docker.io/filebrowser/filebrowser:latest
+    container_name: filebrowser
+    restart: unless-stopped
+    command: --config=/config/app/filebrowser.json --database=/config/db/database.db --address=0.0.0.0 --port=8080 --log=/config/log/filebrowser.log
     healthcheck:
-      test: "curl -f http://localhost:8080/health || exit 1"
+      test: curl -f http://localhost:8080/health || exit 1
     volumes:
-      - "./config:/config"
-      - "./files:/files:ro"
+      - ./config:/config
+      - ./uploads:/files/uploads
     expose:
-      - 8080
-    networks:
-      - "proxy"
+      - 8080      
 networks:
-  proxy:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-        - subnet: "172.16.21.0/29"
+        - subnet: 172.16.10.0/29
