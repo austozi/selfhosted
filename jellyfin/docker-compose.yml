@@ -1,36 +1,32 @@
-version: "3"
+version: "2.4"
 services:
   jellyfin:
-    image: "linuxserver/jellyfin:latest"
-    container_name: "jellyfin"
-    restart: "unless-stopped"
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
     environment:
-      PUID: "1000"
-      PGID: "1000"
-      TZ: "Europe/London"
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
     volumes:
-      - "./config:/config"
-      - "/opt/vc/lib:/opt/vc/lib" # Raspberry Pi
-      - "./tvshows:/data/tvshows:ro"
-      - "./movies:/data/movies:ro"
-      - "./music:/data/music:ro"
+      - ./config:/config
+      - ./library:/library:ro
+      - /opt/vc/lib:/opt/vc/lib" # Raspberry Pi
     expose:
       - 8096
       - 8920
       - 7359/udp
       - 1900/udp
     devices:
-      #- "/dev/dri:/dev/dri" # Intel only
-      - "/dev/vcsm-cma:/dev/vcsm" # Raspberry Pi
-      - "/dev/vchiq:/dev/vchiq" # Raspberry Pi
-      - "/dev/video10:/dev/video10" # Raspberry Pi
-      - "/dev/video11:/dev/video11" # Raspberry Pi
-      - "/dev/video12:/dev/video12" # Raspberry Pi
-    networks:
-      - "proxy"
+      #- /dev/dri:/dev/dri # Intel only
+      - /dev/vcsm-cma:/dev/vcsm # Raspberry Pi
+      - /dev/vchiq:/dev/vchiq # Raspberry Pi
+      - /dev/video10:/dev/video10 # Raspberry Pi
+      - /dev/video11:/dev/video11 # Raspberry Pi
+      - /dev/video12:/dev/video12 # Raspberry Pi
 networks:
-  proxy:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-        - subnet: "172.16.29.0/29"
+        - subnet: 172.16.22.0/29
