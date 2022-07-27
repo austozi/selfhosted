@@ -2,7 +2,7 @@
 
 # Jellyfin
 
-[Jellyfin](https://github.com/jellyfin/jellyfin) is a streaming media application. This is the server component. Official mobile clients are available.
+[Jellyfin](https://github.com/jellyfin/jellyfin) is a streaming media application suite. This is the server component. Official mobile clients are available.
 
 ## Install
 
