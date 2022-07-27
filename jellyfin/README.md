@@ -1,3 +1,5 @@
+![Jellyfin](https://raw.githubusercontent.com/austozi/selfhosted/main/jellyfin/jellyfin.svg)
+
 # Jellyfin
 
 [Jellyfin](https://github.com/jellyfin/jellyfin) is a streaming media application. This is the server component. Official mobile clients are available.
