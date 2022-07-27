@@ -25,7 +25,7 @@ Some guiding principles:
 | Firefly III        | Username & Password    | TOTP |            |          |                |
 | FreshRSS           | Username & Password    |      | Yes        | Yes      |                |
 | Gotify             | Username & Password    |      | Yes        |          |                |
-| Grocy              | Username & Password    |      | Yes        | Yes      |                |
+| Grocy              | Username & Password    |      | Yes        | Yes      | 172.16.19.0/29 |
 | Hammond            | Username & Password    |      |            |          |                |
 | Heimdall           | Password only          |      |            |          |                |
 | Home Assistant     | Username & Password    | TOTP | Yes        |          |                |
