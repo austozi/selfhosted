@@ -10,13 +10,13 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    aria-label="Jellyfin"
    role="img"
-   viewBox="0 0 399.85056 399.83783"
+   viewBox="0 0 64.000001 63.997967"
    version="1.1"
    id="svg21"
    sodipodi:docname="jellyfin.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   width="399.85056"
-   height="399.83783">
+   width="64"
+   height="63.997967">
   <metadata
      id="metadata25">
     <rdf:RDF>
@@ -43,8 +43,8 @@
      id="namedview23"
      showgrid="false"
      inkscape:zoom="0.75130096"
-     inkscape:cx="-122.80579"
-     inkscape:cy="117.44041"
+     inkscape:cx="-290.73106"
+     inkscape:cy="-50.479524"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -52,7 +52,8 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:document-rotation="0" />
   <defs
      id="defs11">
     <path
@@ -87,7 +88,7 @@
      y="0"
      width="100%"
      height="100%"
-     transform="translate(-56.074305,-56.08)" />
+     transform="matrix(0.16005981,0,0,0.16005981,-8.9752426,-8.9761541)" />
   <use
      xlink:href="#A"
      fill-opacity="0"
@@ -99,7 +100,7 @@
      y="0"
      width="100%"
      height="100%"
-     transform="translate(-56.074305,-56.08)" />
+     transform="translate(-223.99958,-223.99993)" />
   <use
      xlink:href="#C"
      fill="url(#B)"
@@ -109,7 +110,7 @@
      y="0"
      width="100%"
      height="100%"
-     transform="translate(-56.074305,-56.08)" />
+     transform="matrix(0.16005981,0,0,0.16005981,-8.9752426,-8.9761541)" />
   <use
      xlink:href="#C"
      fill-opacity="0"
@@ -121,5 +122,5 @@
      y="0"
      width="100%"
      height="100%"
-     transform="translate(-56.074305,-56.08)" />
+     transform="translate(-223.99958,-223.99993)" />
 </svg>
