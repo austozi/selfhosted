@@ -1,4 +1,4 @@
-![Pi-hole](https://github.com/austozi/selfhosted/raw/main/pihole/pihole.svg)
+![Pi-hole icon](https://github.com/austozi/selfhosted/raw/main/pihole/pihole.svg)
 
 # Pi-hole
 
