@@ -53,6 +53,6 @@ Some guiding principles:
 | Uptime Kuma | user:pass | TOTP | | | | |
 | Vaultwarden | user:pass | TOTP | Yes | Yes | | |
 | Wallabag | user:pass | TOTP | Yes | | | |
-| WebSSH | user:pass | TOTP | | | | |
+| WebSSH | user:pass | TOTP | | | | 172.16.42.0/29 |
 | Wiki.js | user:pass | TOTP | | | | |
 | μlogger | user:pass | | Yes | Yes | | |
