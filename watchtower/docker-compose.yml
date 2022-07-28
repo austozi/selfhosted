@@ -1,11 +1,11 @@
-version: "3"
+version: "2.4"
 services:
   watchtower:
-    image: "containrrr/watchtower:armhf-latest"
-    container_name: "watchtower"
-    restart: "unless-stopped"
+    image: docker.io/containrrr/watchtower:latest
+    container_name: watchtower
+    restart: unless-stopped
     environment:
-      TZ: "Europe/London"
+      TZ: Europe/London
       WATCHTOWER_CLEANUP: "true"
       WATCHTOWER_INCLUDE_RESTARTING: "false"
       WATCHTOWER_INCLUDE_STOPPED: "false"
@@ -14,25 +14,25 @@ services:
       WATCHTOWER_NO_RESTART: "false"
       WATCHTOWER_NO_PULL: "false"
       WATCHTOWER_MONITOR_ONLY: "false"
-      WATCHTOWER_NOTIFICATIONS: "gotify" # Or 'email'
-      # If using Gotify, configure the following, else comment out:
-      WATCHTOWER_NOTIFICATION_GOTIFY_URL: "https://gotify.example.com" # Change me
-      WATCHTOWER_NOTIFICATION_GOTIFY_TOKEN: "Super-Secret-Token" # Change me, from Apps > Create Application in Gotify
-      # If using email, configure the following, else comment out:
-      # WATCHTOWER_NOTIFICATION_EMAIL_FROM: "watchtower@example.com" # Change me
-      # WATCHTOWER_NOTIFICATION_EMAIL_TO: "admin@example.com" # Change me
-      # WATCHTOWER_NOTIFICATION_EMAIL_SERVER: "smtp.example.com" # Change me
-      # WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT: 587 # Change me
-      # WATCHTOWER_NOTIFICATION_EMAIL_DELAY: 2
-      # WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER: "watchtower@example.com" # Change me
-      # WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD: "Super-Secret-Password" # Change me
+      WATCHTOWER_NOTIFICATIONS: email
+      WATCHTOWER_NOTIFICATION_EMAIL_FROM: "watchtower@example.com" # Change me
+      WATCHTOWER_NOTIFICATION_EMAIL_TO: "admin@example.com" # Change me
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER: "smtp.example.com" # Change me
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PORT: 587 # Change me
+      WATCHTOWER_NOTIFICATION_EMAIL_DELAY: 2
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER_USER: "watchtower@example.com" # Change me
+      WATCHTOWER_NOTIFICATION_EMAIL_SERVER_PASSWORD: "watchtower_password" # Change me
+      # If using Gotify, change WATCHTOWER_NOTIFICATIONS to 'gotify'.
+      # Uncomment and specify the following parameters for Gotify. 
+      # Also, comment out email-related parameters above.
+      # Generate the token from within Gotify, under Apps > Create Application.
+      # WATCHTOWER_NOTIFICATION_GOTIFY_URL: https://gotify.example.com # Change me
+      # WATCHTOWER_NOTIFICATION_GOTIFY_TOKEN: Super-Secret-Token # Change me
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    networks:
-      - "backend"
+      - /var/run/docker.sock:/var/run/docker.sock
 networks:
-  backend:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-      - subnet: "172.16.4.0/30"
+        - subnet: 172.16.4.0/29
