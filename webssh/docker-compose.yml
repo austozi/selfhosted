@@ -1,18 +1,16 @@
-version: "3"
+version: "2.4"
 services:
   webssh:
-    image: "austozi/webssh:latest"
-    container_name: "webssh"
-    restart: "unless-stopped"
+    image: docker.io/austozi/webssh:latest
+    container_name: webssh
+    restart: unless-stopped
     volumes:
-      - "./config/log:/config/log"
+      - ./config/log:/config/log
     expose:
       - 8888
-    networks:
-      - "proxy"
 networks:
-  proxy:
-    driver: "bridge"
+  default:
+    driver: bridge
     ipam:
       config:
-        - subnet: "172.16.56.0/29"
+        - subnet: 172.16.42.0/29
