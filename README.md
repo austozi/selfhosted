@@ -8,6 +8,7 @@ This repository contains configurations for my selfhosted services. It is intend
 2. Add current user to the docker group: `sudo adduser $(whoami) docker`.
 3. Log out and log back in.
 4. Create `/etc/docker/daemon.json` with the following content:
+   
    ```
    {
      "default-address-pools" : [
@@ -19,7 +20,8 @@ This repository contains configurations for my selfhosted services. It is intend
          "base" : "192.168.0.0/16",
          "size" : 24
        }
-    ]
-  }
-  ```
+       ]
+     }
+   ```
+   
 6. Restart the Docker service: `sudo systemctl restart docker`.
