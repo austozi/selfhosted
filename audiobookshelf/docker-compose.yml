@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    restart: unless-stopped
+    environment:
+      TZ: Europe/London
+    volumes:
+      - ./config:/config
+      - ./data:/metadata
+    expose:
+      - 80
+    networks:
+      - backend
+      - frontend
+networks:
+  backend:
+  frontend:
