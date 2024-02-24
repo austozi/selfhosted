@@ -12,14 +12,14 @@ This repository contains configurations for my selfhosted services. It is intend
    ```
    {
      "default-address-pools" : [
-       {
-         "base" : "172.17.0.0/12",
-         "size" : 20
-       },
-       {
-         "base" : "192.168.0.0/16",
-         "size" : 24
-       }
+          {
+            "base" : "172.17.0.0/12",
+            "size" : 20
+          },
+          {
+            "base" : "192.168.0.0/16",
+            "size" : 24
+          }
        ]
      }
    ```
