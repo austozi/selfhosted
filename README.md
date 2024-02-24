@@ -2,7 +2,7 @@
 
 This repository contains configurations for my selfhosted services. It is intended for my personal use only.
 
-## Configuring the Docker Host
+## Docker host configuration
 
 1. Install Docker: `curl -fsSL https://get.docker.com | sudo bash`.
 2. Add current user to the docker group: `sudo adduser $(whoami) docker`.
