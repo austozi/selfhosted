@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+  duckdns:
+    image: lscr.io/linuxserver/duckdns:latest
+    container_name: duckdns
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+      SUBDOMAINS: changeme # Change me
+      TOKEN: changeme # Change me
+      LOG_FILE: "true"
+    volumes:
+      - ./config:/config
+    networks:
+      - backend
+networks:
+  backend:
