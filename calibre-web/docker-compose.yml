@@ -1,0 +1,22 @@
+version: "2.4"
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    container_name: calibre-web
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+      DOCKER_MODS: "linuxserver/calibreweb:calibre" # x86_64 only
+    volumes:
+      - ./config:/config
+      - ./data/books:/books
+    expose:
+      - 8083
+    networks:
+      - backend
+      - frontend
+networks:
+  backend:
+  frontend:
