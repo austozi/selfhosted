@@ -1,0 +1,15 @@
+version: "2.4"
+services:
+  filebrowser:
+    image: docker.io/filebrowser/filebrowser:latest
+    container_name: filebrowser
+    restart: unless-stopped
+    user: "1000:1000"
+    command: --config=/config/app/filebrowser.json --database=/config/db/database.db --address=0.0.0.0 --port=8080 --log=/config/log/filebrowser.log
+    volumes:
+      - ./config:/config
+      - ./data:/files
+    networks:
+      - frontend
+networks:
+  frontend:
