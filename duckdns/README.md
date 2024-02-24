@@ -1,6 +1,6 @@
 # DuckDNS
 
-[DuckDNS](https://www.duckdns.org) is a free dynamic DNS service. This container will periodically update the public IP address for DuckDNS domains.
+[DuckDNS](https://www.duckdns.org) is a free dynamic DNS service. This container, provided by [LinuxServer.io](https://github.com/linuxserver/docker-duckdns), periodically updates the public IP address for DuckDNS domains.
 
 ## Install
 
