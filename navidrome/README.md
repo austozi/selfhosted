@@ -8,7 +8,7 @@
 
 # fail2ban
 
-1. Create the file `filter.d/navidrome.local` with the following content:
+1. `filter.d/navidrome.local`:
 
    ```
    [INCLUDES]
@@ -19,7 +19,7 @@
    ignoreregex =
    ```
    
-2. Add the following to `jail.local`:
+2. `jail.local`:
 
    ```
    [navidrome]
