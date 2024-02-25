@@ -32,4 +32,4 @@ This repository contains configurations for my selfhosted services. It is intend
 2. Make the application available on the Internet via [SWAG](https://github.com/linuxserver/docker-swag), if necessary.
 3. Enforce multi-factor authentication, if available.
 4. Protect the application with [Authelia](https://github.com/authelia/authelia) or basic HTTP authentication, if possible.
-5. Enable [fail2ban](https://github.com/fail2ban/fail2ban) protection, if available. Applications with a fail2ban directory can be protected by fail2ban.
+5. Enable [Fail2ban](https://github.com/fail2ban/fail2ban) protection, if available. Applications with a fail2ban directory can be protected by fail2ban.
