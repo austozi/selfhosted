@@ -4,4 +4,4 @@
 
 ## Install
 
-Download `docker-compose.yml` and execute `docker compose up -d`.
+Download `docker-compose.yml`, edit accordingly and execute `docker compose up -d`.
