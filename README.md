@@ -4,7 +4,7 @@ This repository contains configurations for my selfhosted services. It is intend
 
 ## Docker host configuration
 
-1. Install Docker: `curl -fsSL https://get.docker.com | sudo bash`.
+1. Install [Docker](https://docs.docker.com/get-docker): `curl -fsSL https://get.docker.com | sudo bash`.
 2. Add current user to the docker group: `sudo adduser $(whoami) docker`.
 3. Log out and log back in.
 4. Create `/etc/docker/daemon.json` with the following content to reduce the IP address pool size:
