@@ -1,0 +1,5 @@
+[INCLUDES]
+before = common.conf
+
+[Definition]
+failregex = ^.*Login failed for user .+ IP-address: <ADDR>.*$
