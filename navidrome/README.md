@@ -6,7 +6,7 @@
 
 1. Download `docker-compose.yml` and execute `docker compose up -d`.
 
-# fail2ban
+## fail2ban
 
 Filter:
 
