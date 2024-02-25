@@ -1,0 +1,24 @@
+version: "2.4"
+services:
+  navidrome:
+    image: docker.io/deluan/navidrome:latest
+    container_name: navidrome
+    restart: unless-stopped
+    user: "1000:1000"
+    entrypoint: >
+      sh -c "mkdir -p /log &&
+        /app/navidrome 2>&1 |
+        tee /log/navidrome.log"
+    environment:
+      TZ: Europe/London
+      # Full configuration options here:
+      # https://www.navidrome.org/docs/usage/configuration-options/
+      ND_UILOGINBACKGROUNDURL: https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg
+    volumes:
+      - ./config/data:/data
+      - ./config/log:/log
+      - ./data:/music:ro
+    networks:
+      - frontend
+networks:
+  frontend:
