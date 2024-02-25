@@ -25,3 +25,8 @@ This repository contains configurations for my selfhosted services. It is intend
    ```
    
 6. Restart the Docker service: `sudo systemctl restart docker`.
+
+## Docker containers
+
+1. Download the `docker-compose.yml` for the application, customise accordingly and execute `docker compose up -d`.
+2. Applications with a fail2ban directory can be protected by [fail2ban](https://github.com/fail2ban/fail2ban).
