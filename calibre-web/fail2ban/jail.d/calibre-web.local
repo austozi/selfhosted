@@ -1,0 +1,5 @@
+[calibre-web]
+enabled = true
+port = http,https
+filter = calibre-web
+logpath = /config/log/calibre-web/calibre-web.log
