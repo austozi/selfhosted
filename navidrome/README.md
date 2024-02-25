@@ -8,25 +8,22 @@
 
 # fail2ban
 
-1. `filter.d/navidrome.local`:
+Filter:
 
-   ```
-   [INCLUDES]
-   before = common.conf
+```
+[INCLUDES]
+before = common.conf
 
-   [Definition]
-   failregex = msg="Unsuccessful login".*X-Real-Ip:\[<ADDR>\]
-   ignoreregex =
-   ```
+[Definition]
+failregex = msg="Unsuccessful login".*X-Real-Ip:\[<ADDR>\]
+```
    
-2. `jail.local`:
-
-   ```
-   [navidrome]
-   enabled = true
-   port = http,https
-   filter = navidrome
-   logpath = /config/log/navidrome/navidrome.log   
-   ```
+Jail:
+```
+[navidrome]
+enabled = true
+port = http,https
+filter = navidrome
+logpath = /config/log/navidrome/navidrome.log   
+```
    
-3. Map the log file so fail2ban can read it.
