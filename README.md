@@ -26,7 +26,7 @@ This repository contains configurations for my selfhosted services. It is intend
    
 6. Restart the Docker service: `sudo systemctl restart docker`.
 
-## Installing and configuring containerised applications
+## Deploying containerised applications
 
 1. Download docker-compose.yml for the application, customise accordingly and execute `docker compose up -d`.
 2. Make the application available on the Internet via SWAG (reverse proxy), if necessary.
