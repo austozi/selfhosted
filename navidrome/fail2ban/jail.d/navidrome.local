@@ -1,0 +1,5 @@
+[navidrome]
+enabled = true
+port = http,https
+filter = navidrome
+logpath = /config/log/navidrome/navidrome.log
