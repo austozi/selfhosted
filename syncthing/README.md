@@ -1,6 +1,6 @@
 # Syncthing
 
-[Syncthing](https://syncthing.net) is a peer-to-peer file synchronisation tool.
+[Syncthing](https://github.com/syncthing/syncthing) is a peer-to-peer file synchronisation tol.
 
 ## Install
 
