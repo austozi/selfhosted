@@ -1,0 +1,22 @@
+version: "2.4"
+services:
+  syncthing:
+    image: docker.io/syncthing/syncthing:latest
+    container_name: syncthing
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+    volumes:
+      - ./config:/var/syncthing/config
+      - ./data:/var/syncthing/Sync
+    expose:
+      - 8384 # Web UI
+      - 22000/tcp # TCP file transfers
+      - 22000/udp # QUIC file transfers
+      - 21027/udp # Receive local discovery broadcasts
+    networks:
+      - frontend
+networks:
+  frontend:
