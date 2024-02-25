@@ -1,3 +1,3 @@
-# PiGallery2
+# PiGallery 2
 
-[PiGallery2](https://github.com/bpatrik/pigallery2) is a directory-first online photo gallery.
+[PiGallery 2](https://github.com/bpatrik/pigallery2) is a directory-first online photo gallery.
