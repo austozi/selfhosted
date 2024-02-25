@@ -1,0 +1,17 @@
+version: "2.4"
+services:
+  pigallery:
+    image: docker.io/bpatrik/pigallery2:latest-alpine
+    container_name: pigallery2
+    restart: unless-stopped
+    environment:
+      TZ: Europe/London
+      NODE_ENV: production
+    volumes:
+      - ./config/db:/app/data/db
+      - ./config/tmp:/app/data/tmp
+      - ./data:/app/data/images:ro
+    networks:
+      - frontend
+networks:
+  frontend:
