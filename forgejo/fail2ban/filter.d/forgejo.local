@@ -1,0 +1,6 @@
+[INCLUDES]
+before = common.conf
+
+[Definition]
+failregex =  .*(Failed authentication attempt|invalid credentials|Attempted access of unknown user).* from <HOST>
+ignoreregex =
