@@ -34,9 +34,9 @@ This repository contains configurations for my selfhosted services. It is intend
 4. Protect the application with [Authelia](https://github.com/authelia/authelia) or basic HTTP authentication, if possible.
 5. Enable [Fail2ban](https://github.com/fail2ban/fail2ban) protection, if available (see below).
 
-## Enabling fail2ban
+## Enabling Fail2ban protection
 
-Applications with a fail2ban sub-directory can be protected by fail2ban. To enable fail2ban, perform the following steps, replacing `appname` with the name of the application directory.
+Applications with a fail2ban sub-directory can be protected against bruteforce login attempts using Fail2ban. To enable Fail2ban, perform the following steps, replacing `appname` with the name of the application directory.
 
 1. Copy `filter.d/appname.local` to `/path/to/swag/config/fail2ban/filter.d/appname.local`
 1. Append the content of `jail.d/appname.local` to `/path/to/swag/config/fail2ban/jail.local`.
