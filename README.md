@@ -28,11 +28,13 @@ This repository contains configurations for my selfhosted services. It is intend
 
 ## Deploying a containerised application
 
-1. Download docker-compose.yml for the application, customise accordingly and execute `docker compose up -d`.
-2. Make the application available on the Internet via [SWAG](https://github.com/linuxserver/docker-swag), if necessary.
-3. Enforce multi-factor authentication, if available.
-4. Protect the application with [Authelia](https://github.com/authelia/authelia) or basic HTTP authentication, if possible.
-5. Enable [Fail2ban](https://github.com/fail2ban/fail2ban) protection, if available (see below).
+1. Download docker-compose.yml for the application and customise as appropriate.
+1. Download .env.example (if any) into the same directory as docker-compose.yml, edit appropriately and rename it to .env.
+1. Execute `docker compose up -d`.
+1. Make the application available on the Internet via [SWAG](https://github.com/linuxserver/docker-swag), if necessary.
+1. Enforce multi-factor authentication, if available.
+1. Protect the application with [Authelia](https://github.com/authelia/authelia) or basic HTTP authentication, if possible.
+1. Enable [Fail2ban](https://github.com/fail2ban/fail2ban) protection, if available (see below).
 
 ## Enabling Fail2ban protection
 
