@@ -1,0 +1,21 @@
+services:
+  manyfold:
+    image: ghcr.io/manyfold3d/manyfold-solo:latest
+    container_name: manyfold
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+      MULTIUSER: enabled
+      # SECRET_KEY_BASE: change-me-in-env-file 
+    env_file: 
+      - ./.env
+    volumes:
+      - ./config:/config
+    expose:
+      - 3214
+    networks:
+      - frontend
+networks:
+  frontend:
