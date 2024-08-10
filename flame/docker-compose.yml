@@ -1,11 +1,12 @@
-version: "2.4"
 services:
   flame:
     image: docker.io/pawelmalak/flame:multiarch
     container_name: flame
     restart: unless-stopped
     environment:
-      PASSWORD: changeme # Change me
+      TZ: Europe/London
+    env_file:
+      - ./.env
     volumes:
       - ./config:/app/data
       #- /var/run/docker.sock:/var/run/docker.sock # optional but required for Docker integration
