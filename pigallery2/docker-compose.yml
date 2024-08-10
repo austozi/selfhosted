@@ -7,8 +7,8 @@ services:
       TZ: Europe/London
       NODE_ENV: production
     volumes:
-      - ./config/db:/app/data/db
-      - ./config/tmp:/app/data/tmp
+      - ./config:/app/data
+      - ./config/log:/app/log
       - ./data:/app/data/images:ro
     networks:
       - frontend
