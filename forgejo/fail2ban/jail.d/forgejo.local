@@ -1,0 +1,5 @@
+[forgejo]
+enabled = true
+port = http,https
+filter = forgejo
+logpath = /config/log/forgejo/*.log
