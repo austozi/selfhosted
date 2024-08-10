@@ -8,6 +8,8 @@ services:
       PGID: 1000
       TZ: Europe/London
       LOG_FILE: "true"
+    env_file:
+      - ./.env
     volumes:
       - ./config:/config
     networks:
