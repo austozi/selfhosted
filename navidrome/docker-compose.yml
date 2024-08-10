@@ -16,7 +16,7 @@ services:
     volumes:
       - ./config/data:/data
       - ./config/log:/log
-      - ./music:/music:ro
+      - ./data/music:/music:ro
     networks:
       - frontend
 networks:
