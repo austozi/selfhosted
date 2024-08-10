@@ -1,0 +1,5 @@
+[filebrowser]
+enabled = true
+port = http,https,8080
+filter = filebrowser
+logpath = /config/log/filebrowser/*.log
