@@ -32,4 +32,20 @@ This repository contains configurations for my selfhosted services. It is intend
 2. Make the application available on the Internet via [SWAG](https://github.com/linuxserver/docker-swag), if necessary.
 3. Enforce multi-factor authentication, if available.
 4. Protect the application with [Authelia](https://github.com/authelia/authelia) or basic HTTP authentication, if possible.
-5. Enable [Fail2ban](https://github.com/fail2ban/fail2ban) protection, if available. Applications with a fail2ban directory can be protected by fail2ban.
+5. Enable [Fail2ban](https://github.com/fail2ban/fail2ban) protection, if available (see below).
+
+## Enabling fail2ban
+
+Applications with a fail2ban sub-directory can be protected by fail2ban. To enable fail2ban, perform the following steps, replacing `appname` with the name of the application directory.
+
+1. Copy `filter.d/appname.local` to `/path/to/swag/config/fail2ban/filter.d/appname.local`
+1. Append the content of `jail.d/appname.local` to `/path/to/swag/config/fail2ban/jail.local`.
+1. Mount the log file to the SWAG container by adding its path to `/path/to/swag/docker-compose.yml`. The log file path may vary per application. The following is just an example:
+   ```
+   volumes:
+     - /path/to/appname/config/log:/config/log/appname:ro
+   ```
+1. Recreate the SWAG container from /path/to/swag:
+   ```
+   docker compose up -d --force-recreate
+   ```
