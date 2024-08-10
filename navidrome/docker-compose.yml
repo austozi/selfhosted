@@ -1,4 +1,3 @@
-version: "2.4"
 services:
   navidrome:
     image: docker.io/deluan/navidrome:latest
@@ -17,7 +16,7 @@ services:
     volumes:
       - ./config/data:/data
       - ./config/log:/log
-      - ./data:/music:ro
+      - ./music:/music:ro
     networks:
       - frontend
 networks:
