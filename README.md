@@ -38,9 +38,9 @@ This repository contains configurations for my selfhosted services. It is intend
 
 Applications with a fail2ban sub-directory can be protected against bruteforce login attempts using Fail2ban. To enable Fail2ban, perform the following steps, replacing `appname` with the name of the application directory.
 
-1. Copy `filter.d/appname.local` to `/path/to/swag/config/fail2ban/filter.d/appname.local`
-1. Append the content of `jail.d/appname.local` to `/path/to/swag/config/fail2ban/jail.local`.
-1. Mount the log file to the SWAG container by adding its path to `/path/to/swag/docker-compose.yml`. The log file path may vary per application. The following is just an example:
+1. Copy filter.d/`appname`.local to /path/to/swag/config/fail2ban/filter.d/`appname`.local
+1. Append the content of jail.d/`appname`.local to /path/to/swag/config/fail2ban/jail.local.
+1. Mount the log file to the SWAG container by adding its path to /path/to/swag/docker-compose.yml. The log file path may vary per application. The following is just an example:
    ```
    volumes:
      - /path/to/appname/config/log:/config/log/appname:ro
