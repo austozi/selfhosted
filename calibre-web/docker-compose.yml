@@ -1,4 +1,3 @@
-version: "2.4"
 services:
   calibre-web:
     image: lscr.io/linuxserver/calibre-web:latest
@@ -15,8 +14,6 @@ services:
     expose:
       - 8083
     networks:
-      - backend
       - frontend
 networks:
-  backend:
   frontend:
