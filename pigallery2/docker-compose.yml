@@ -1,4 +1,3 @@
-version: "2.4"
 services:
   pigallery:
     image: docker.io/bpatrik/pigallery2:latest-alpine
