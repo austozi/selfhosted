@@ -7,8 +7,7 @@ services:
       PUID: 1000
       PGID: 1000
       TZ: Europe/London
-      MULTIUSER: enabled
-      # SECRET_KEY_BASE: change-me-in-env-file 
+      MULTIUSER: enabled 
     env_file: 
       - ./.env
     volumes:
