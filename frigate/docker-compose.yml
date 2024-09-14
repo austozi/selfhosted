@@ -1,1 +1,36 @@
-
+services:
+  frigate:
+    image: ghcr.io/blakeblackshear/frigate:0.14.1
+    container_name: frigate
+    restart: unless-stopped
+    privileged: true
+    shm_size: 2gb
+    environment:
+      TZ: Europe/London      
+      FRIGATE_RTSP_PASSWORD: ChangeMe
+    devices:
+      - /dev/video0:/dev/video0 # USB camera
+      - /dev/bus/usb:/dev/bus/usb # USB Coral
+      #- /dev/apex_0:/dev/apex_0 # PCIe Coral
+      #- /dev/video11:/dev/video11 # Raspberry Pi 4B
+      - /dev/dri/renderD128:/dev/dri/renderD128 # Intel hwaccel
+    volumes:
+      - ./config:/config
+      - ./data:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - 1984:1984 # go2rtc
+      - 8971:8971 # Authenticated web UI
+      #- 5000:5000 # Internal unauthenticated access. Expose carefully.
+      - 8554:8554 # RTSP feeds
+      #- 8555:8555/tcp # WebRTC over tcp
+      #- 8555:8555/udp # WebRTC over udp
+    networks:
+      - backend
+      - frontend
+networks:
+  backend:
+  frontend:
