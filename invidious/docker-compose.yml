@@ -1,0 +1,57 @@
+services:
+  invidious:
+    image: quay.io/invidious/invidious:latest
+    container_name: invidious
+    restart: unless-stopped
+    environment:
+      INVIDIOUS_CONFIG: |
+        db:
+          dbname: invidious
+          user: invidious
+          password: ChangeMe
+          host: invidious-postgres
+          port: 5432
+        check_tables: true
+        signature_server: invidious-sighelper:12999
+        hmac_key: ChangeMe
+    volumes:
+      - ./config/invidious/docker/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+      - sighelper
+    networks:
+      - backend
+      - frontend
+  sighelper:
+    image: quay.io/invidious/inv-sig-helper:latest
+    container_name: invidious-sighelper
+    restart: unless-stopped
+    command: ["--tcp", "0.0.0.0:12999"]
+    read_only: true
+    cap_drop:
+      - ALL
+    environment:
+      TZ: Europe/London
+      RUST_LOG: info
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - backend
+  postgres:
+    image: docker.io/library/postgres:14
+    container_name: invidious-postgres
+    restart: unless-stopped
+    volumes:
+      - ./config/postgres/data:/var/lib/postgresql/data
+      - ./config/postgres/sql:/config/sql
+    environment:
+      POSTGRES_DB: invidious
+      POSTGRES_USER: invidious
+      POSTGRES_PASSWORD: ChangeMe
+    networks:
+      - backend
+networks:
+  backend:
+  frontend:
